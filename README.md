@@ -1,4 +1,4 @@
-## Tech Stack
+## MEAN Stack vs MERN Stack
 
 ### MEAN Stack
 - `M`ongoDB
@@ -12,23 +12,23 @@
 - `R`eact
 - `N`ode.js
 
-## vscode 설정
-- ### plugin 설치
+## 개발환경 설정
+### vscode
+- #### plugin 설치
     - Simple React Snippets
-- ### config 수정
+- #### config 수정
     - Emmet: Include Languages
 
-## chrome 확장 프로그램 설치
-- ### React Developer Tools 설치
+### chrome 확장 프로그램
+- #### React Developer Tools 설치
 
 
-## react app 생성
-```
+## react app
+```javascript
+// 생성
 npx create-react-app example01
-```
 
-## 로컬에서 실행
-```
+// 실행
 npm start
 ```
 
@@ -65,51 +65,24 @@ const [variable, setVariable] = useState(value);
 ## useEffect
 - ### 개요
     - 랜더링시마다 호출된다
-- ### import 추가
 ```javascript
 import { useState, useEffect } from "react";
-```
-- ### 매 랜더링시마다 호출한다
-```javascript
-    useEffect(() => {
-        console.log('use effect run');
-        console.log(blogs);
-    });
-```
-- ### 최초 랜더링시에만 호출한다
-```javascript
-    useEffect(() => {
-        console.log('use effect run');
-        console.log(blogs);
-    }, []);
-```
-- ### name state 변경시에만 호출한다
-```javascript
-    useEffect(() => {
-        console.log('use effect run');
-        console.log(blogs);
-        console.log(name);
-    }, [name]);
-```
 
-## json-server
-```
-npx json-server --watch data/db.json --port 8000
-```
+// 매 랜더링시마다 호출
+useEffect(() => {
+    console.log('useEffect run every render');
+    console.log(blogs);
+});
 
-## react-router-dom 설치
-- ### 5 버전 설치
-```
-npm install react-router-dom@5
-```
+// 최초 랜더링시에만 호출
+useEffect(() => {
+    console.log('useEffect run once');
+}, []);
 
-## router 설정
-- ### a 태그를 Link 컴포넌트로 변경한다
-```javascript
-import { Link } from 'react-router-dom';
-
-<Link to="/">Home</Link>
-<Link to="/create">New Blog</Link>
+// name state 변경시에 호출
+useEffect(() => {
+    console.log('useEffect run on change name state');
+}, [name]);
 ```
 
 ## useEffect clean up
@@ -140,12 +113,110 @@ const useFetch = (url) => {
 }
 ```
 
-create component
-event handling
-state
-hook
-fetch
-custom hook
-error handling
-router
-route parameter
+## npm install
+- ### react-router-dom 설치
+    - react 에서 Router 를 사용
+    - 5 버전 설치
+```
+npm install react-router-dom@5
+```
+- ### json-server
+    - json 파일을 REAT API 로 서비스하는 간단한 서버
+```
+npx json-server --watch data/db.json --port 8000
+```
+
+## BrowserRouter
+```javascript
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+<BrowserRouter>
+    <Switch>
+        <Route exact path="/">
+            <Home />
+        </Route>
+        <Route exact path="/blogs">
+            <Blogs />
+        </Route>
+        <Route path="/blogs/:id">
+            <BlogDetails />
+        </Route>
+    </Switch>
+</BrowserRouter>
+```
+```javascript
+import { Link } from "react-router-dom";
+
+<Link to="/">Home</Link>
+<Link to="/blogs">Blogs</Link>
+```
+
+## useParams
+```javascript
+// App.js
+<BrowserRouter>
+    <Switch>
+        <Route path="/blogs/:id">
+            <BlogDetails />
+        </Route>
+    </Switch>
+</BrowserRouter>
+```
+```javascript
+// BlogDetails.js
+import { useParams } from 'react-router-dom';
+
+const { id } = useParams();
+```
+
+## fetch CRUD
+```javascript
+// Create
+fetch('http;//localhost/blogs', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(params)
+})
+.then(res => {
+
+});
+
+// Read
+fetch('http;//localhost/blogs', {
+    method: 'GET',
+})
+.then(res => {
+    return res.json();
+})
+.then(data => {
+
+});
+
+// Update
+fetch('http;//localhost/blogs/' + id, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(params)
+})
+.then(res => {
+
+});
+
+// Delete
+fetch('http;//localhost/blogs/' + id, {
+    method: 'DELETE',
+})
+.then(res => {
+
+});
+```
+
+## redirect
+```javascript
+import { useHistory } from "react-router-dom";
+
+const history = useHistory();
+history.push('/blogs');
+```
