@@ -12,24 +12,28 @@
 - `R`eact
 - `N`ode.js
 
-## 개발환경 설정
-### vscode
-- #### plugin 설치
+## react 개발환경 설정
+- vscode plugin 설치
     - Simple React Snippets
-- #### config 수정
+- vscode config 수정
     - Emmet: Include Languages
+- chrome 확장 프로그램
+    - React Developer Tools 설치
 
-### chrome 확장 프로그램
-- #### React Developer Tools 설치
 
-
-## react app
+## react 프로젝트 생성
 ```javascript
-// 생성
 npx create-react-app example01
+```
 
-// 실행
+## react 프로젝트 실행
+```javascript
+// 로컬 실행
 npm start
+npm run start
+
+// 프로덕션 실행
+npm run build
 ```
 
 ## useState
@@ -113,17 +117,16 @@ const useFetch = (url) => {
 }
 ```
 
-## npm install
-- ### react-router-dom 설치
-    - react 에서 Router 를 사용
-    - 5 버전 설치
-```
-npm install react-router-dom@5
-```
-- ### json-server
-    - json 파일을 REAT API 로 서비스하는 간단한 서버
-```
+## json-server
+- json 파일을 REAT API 로 서비스하는 간단한 서버
+```bash
 npx json-server --watch data/db.json --port 8000
+```
+
+## router 설치
+```bash
+## react-router-dom, 5 버전
+npm install react-router-dom@5
 ```
 
 ## BrowserRouter
@@ -156,6 +159,7 @@ import { Link } from "react-router-dom";
 ## useParams
 ```javascript
 // App.js
+
 <BrowserRouter>
     <Switch>
         <Route path="/blogs/:id">
@@ -166,6 +170,7 @@ import { Link } from "react-router-dom";
 ```
 ```javascript
 // BlogDetails.js
+
 import { useParams } from 'react-router-dom';
 
 const { id } = useParams();
@@ -182,7 +187,8 @@ fetch('http;//localhost/blogs', {
 .then(res => {
 
 });
-
+```
+```javascript
 // Read
 fetch('http;//localhost/blogs', {
     method: 'GET',
@@ -193,7 +199,8 @@ fetch('http;//localhost/blogs', {
 .then(data => {
 
 });
-
+```
+```javascript
 // Update
 fetch('http;//localhost/blogs/' + id, {
     method: 'PUT',
@@ -203,7 +210,8 @@ fetch('http;//localhost/blogs/' + id, {
 .then(res => {
 
 });
-
+```
+```javascript
 // Delete
 fetch('http;//localhost/blogs/' + id, {
     method: 'DELETE',
@@ -220,8 +228,3 @@ import { useHistory } from "react-router-dom";
 const history = useHistory();
 history.push('/blogs');
 ```
-
-## 로컬에서 실행
-npm run start
-
-npx create-react-app example02
