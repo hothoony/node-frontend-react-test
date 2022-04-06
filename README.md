@@ -220,3 +220,8 @@ import { useHistory } from "react-router-dom";
 const history = useHistory();
 history.push('/blogs');
 ```
+
+## 로컬에서 실행
+npm run start
+
+npx create-react-app example02
