@@ -32,8 +32,13 @@ npx create-react-app example01
 npm start
 npm run start
 
-// 프로덕션 실행
+// 프로덕션 빌드
 npm run build
+
+// serve 를 사용해서 build 디렉토리를 서버에서 실행한다
+// serve 설치
+//   npm install serve
+npx serve -s build
 ```
 
 ## useState
