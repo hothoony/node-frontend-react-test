@@ -36,8 +36,7 @@ npm run start
 npm run build
 
 // serve 를 사용해서 build 디렉토리를 서버에서 실행한다
-// serve 설치
-//   npm install serve
+npm install serve // serve 설치
 npx serve -s build
 ```
 
