@@ -23,7 +23,12 @@
 
 ## react 프로젝트 생성
 ```javascript
+// javascript 프로젝트로 생성
 npx create-react-app example01
+```
+```javascript
+// typescript 프로젝트로 생성
+npx create-react-app example01 --template typescript
 ```
 
 ## react 프로젝트 실행
