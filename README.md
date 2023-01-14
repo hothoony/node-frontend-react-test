@@ -22,12 +22,13 @@
 
 
 ## react 프로젝트 생성
-```javascript
-// javascript 프로젝트로 생성
-npx create-react-app example01
+```shell
+$ npx create-react-app example01
+$ npm init react-app example01
+$ yarn create react-app example01
 ```
-```javascript
-// typescript 프로젝트로 생성
+```shell
+## typescript 프로젝트로 생성
 npx create-react-app example01 --template typescript
 ```
 
@@ -49,30 +50,32 @@ npx serve -s build
 - ### 개요
     - state 로 선언하면 값 변경시 화면을 자동으로 랜더링한다
 
-- ### import
+- ### 사용법
 ```javascript
+// useState 와 useEffect 를 임포트한다
 import { useState, useEffect } from "react";
 
+// const[변수명, set변수명] = useState(초기값);
 const [variable, setVariable] = useState(value);
 ```
 
 - ### blogs 배열을 state로 선언
 ```javascript
-    const [blogs, setBlogs] = useState([
-        { id: 1, title: 'item1', body: 'body1'},
-        { id: 2, title: 'item2', body: 'body2'},
-        { id: 3, title: 'item3', body: 'body3'},
-    ]);
+const [blogs, setBlogs] = useState([
+    { id: 1, title: 'item1', body: 'body1'},
+    { id: 2, title: 'item2', body: 'body2'},
+    { id: 3, title: 'item3', body: 'body3'},
+]);
 
-    // 변경시
-    setBlogs(newBlogs);
+// 변경시
+setBlogs(newBlogs);
 ```
 - ### name 문자열을 state로 선언
 ```javascript
-    const [name, setName] = useState('james');
+const [name, setName] = useState('james');
 
-    // 변경시
-    setName('new name');
+// 변경시
+setName('new name');
 ```
 
 ## useEffect
