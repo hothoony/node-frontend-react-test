@@ -31,6 +31,39 @@ export default MyButton;
 
 ```
 
+## 컴포넌트에 데이터 전달
+- 컴포넌트에 데이터를 전달
+```javascript
+// 컴포넌트를 임포트하고
+import Board from './components/Board';
+
+function App() {
+  return (
+        {/* 애트리뷰트로 데이터를 전달한다 */}
+        <Board title="제목1" content="내용1" />
+  );
+}
+export default App;
+```
+- 컴포넌트에서 props 로 데이터를 전달받아 출력한다
+```javascript
+// props 파라미터를 정의하고
+const Board = (props) => {
+    
+    // props 에서 title, content 파라미터를 꺼낸다
+    let {title, content} = props;
+
+    return (
+        <div>
+            <h1>Board</h1>
+            <p>{title}</p>{/* props 에서 꺼낸 title 을 출력 */}
+            <p>{content}</p>{/* props 에서 꺼낸 content 을 출력 */}
+        </div>
+    );
+}
+export default Board;
+```
+
 ## 버튼 클릭 핸들러 등록
 - 화살표 함수로 버튼 핸들러 등록
 ```javascript
