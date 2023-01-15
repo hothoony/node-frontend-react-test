@@ -12,6 +12,84 @@
 - `R`eact
 - `N`ode.js
 
+## react
+- JAX 를 사용
+- JAX 주석 `{/* 주석입력 */}`
+```javascript
+const MyButton = () => {
+
+    // 주석입니다1
+
+    return (
+        // 주석입니다2
+        <div>
+            {/* 주석입니다3 */}
+        </div>
+    );
+}
+export default MyButton;
+
+```
+
+## 버튼 클릭 핸들러 등록
+- 화살표 함수로 버튼 핸들러 등록
+```javascript
+const MyButton = () => {
+
+    return (
+        <div>
+            {/* 화살표 함수로 버튼 핸들러 등록 */}
+            <button onClick={() => { console.log('btn1 clicked'); }}>btn1</button>
+        </div>
+    );
+}
+export default MyButton;
+```
+- 버튼 핸들러 함수 정의후 버튼 이벤트에 연결
+```javascript
+const MyButton = () => {
+
+    // 버튼 핸들러 함수 정의후
+    const handleClick = () => {
+        console.log('btn2 clicked');
+    }
+
+    return (
+        <div>
+            {/* 핸들러 함수를 버튼 이벤트에 연결 */}
+            <button onClick={handleClick}>btn2</button>
+        </div>
+    );
+}
+export default MyButton;
+```
+
+## 데이터 바인딩
+- 데이터 출력
+```javascript
+// { } 를 사용
+let message = 'hello world';
+
+<span>{message}</span>
+```
+- 이미지 출력
+```javascript
+// 이미지 파일을 먼저 임포트한다
+import logo from './logo.png';
+
+// 데이터 출려과 동일하게 { } 를 사용해서 출력
+<img src={logo} />
+```
+- css class 출력
+```javascript
+// className 속성 사용
+<div className={padding20px}>
+```
+- css inline style 적용
+```javascript
+<div style={ {color: 'blue', fontSize: '20px'} }>
+```
+
 ## react 개발환경 설정
 - vscode plugin 설치
     - Simple React Snippets
@@ -47,8 +125,14 @@ npx serve -s build
 ```
 
 ## useState
+
 - ### 개요
-    - state 로 선언하면 값 변경시 화면을 자동으로 랜더링한다
+    - state 는 변수 대신 사용할 수 있는 데이터 저장 공간
+    - 데이터는 일반 변수에 넣거나 state 에 넣을 수 있다
+
+- ### state 를 사용하는 이유
+    - state 로 선언하면 값이 변경될 때 화면을 자동으로 랜더링한다
+    - state 데이터가 변경되면 state 를 사용하는 화면이 자동으로 렌더링된다
 
 - ### 사용법
 ```javascript
@@ -57,6 +141,12 @@ import { useState, useEffect } from "react";
 
 // const[변수명, set변수명] = useState(초기값);
 const [variable, setVariable] = useState(value);
+let [count, setCount] = useState(0);
+let [dataList, setDataList] = useState([
+    {no: 1, title: '제목1', content: '내용1'},
+    {no: 2, title: '제목2', content: '내용2'},
+    {no: 3, title: '제목3', content: '내용3'},
+]);
 ```
 
 - ### blogs 배열을 state로 선언
@@ -127,6 +217,13 @@ const useFetch = (url) => {
 
     return { data, isPending, error };
 }
+```
+
+## 버튼 클릭 핸들러
+```javascript
+<span onClick={ console.log('hello world'); }>
+<span onClick={ increaseCount(); }>
+<span onClick={ () => {} }>
 ```
 
 ## json-server
