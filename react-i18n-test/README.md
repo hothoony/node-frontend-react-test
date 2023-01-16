@@ -8,8 +8,8 @@ npm install i18next
 
 ## 메시지 파일 만들기
 - ### ko `src/locale/lang/ko.json`
-```json
-/* src/locale/lang/ko.json */
+```javascript
+// src/locale/lang/ko.json
 {
     "greeting": "안녕하세요"
 }
