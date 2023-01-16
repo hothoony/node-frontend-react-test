@@ -14,8 +14,9 @@ npm install i18next
     "greeting": "안녕하세요"
 }
 ```
-- ### en `src/locale/lang/en.json`
-```json
+- ### en
+```javascript
+// src/locale/lang/en.json
 {
     "greeting": "Hello"
 }
