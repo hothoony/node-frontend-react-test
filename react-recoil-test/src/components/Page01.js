@@ -7,7 +7,7 @@ const Page01 = () => {
 
     const onClickBtn = () => {
         console.log('onClickBtn');
-        setIsLogin(true);
+        setIsLogin(1);
     };
 
     return (
