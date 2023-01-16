@@ -61,7 +61,8 @@ import './locale/i18n-config';
 ```
 
 ## Greeting.js 에서 메시지 적용
-- `{t('greeting')}`
+- 언어 변경 `i18n.changeLanguage('ko')`
+- 메시지 출력 `{t('greeting')}`
 ```jsx
 import { useState } from 'react';
 // 임포트 추가
