@@ -1,4 +1,5 @@
 # Recoil
+- A state management library for React
 - 전역 shared state 관리
 
 
@@ -28,24 +29,26 @@ function App() {
 ```
 
 ## atom
+- redux 에서 사용하는 store 와 유사
+- atom 이 업데이트 되면 해당 atom 을 구독하고 있는 모든 컴포넌트들의 state 가 렌더링된다
 ```javascript
 // atom 으로 state 를 정의한다
-const todoListState = atom({
-    key: 'todoListState',
-    default: [],
+const loginState = atom({
+    key: 'loginState',
+    default: false,
 });
 
 // useRecoilState
 // useState 와 비슷하게 [값, set값] 를 반환한다
-const [todoList, setTodoList] = useRecoilState(todoListState);
+const [isLogin, setIsLogin] = useRecoilState(loginState);
 
 // useRecoilValue
 // 값만 필요한 경우에 사용
-const todoList = useRecoilValue(todoListState);
+const isLogin = useRecoilValue(isLogin);
 
 // useSetRecoilState
 // set값 만 필요한 경우에 사용
-const setTodoList = useSetRecoilState(todoListState);
+const setIsLogin = useSetRecoilState(isLogin);
 ```
 
 ## selector
