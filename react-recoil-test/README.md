@@ -28,5 +28,26 @@ function App() {
 ```
 
 ## atom
+```javascript
+// atom 으로 state 를 정의한다
+const todoListState = atom({
+    key: 'todoListState',
+    default: [],
+});
+
+// useRecoilState
+// useState 와 비슷하게 [값, set값] 를 반환한다
+const [todoList, setTodoList] = useRecoilState(todoListState);
+
+// useRecoilValue
+// 값만 필요한 경우에 사용
+const todoList = useRecoilValue(todoListState);
+
+// useSetRecoilState
+// set값 만 필요한 경우에 사용
+const setTodoList = useSetRecoilState(todoListState);
+```
 
 ## selector
+- 읽기 전용 selector
+- 읽기 쓰기 selector
