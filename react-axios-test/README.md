@@ -12,6 +12,7 @@ npm install axios
 ```javascript
 // axios 임포트
 const axios = require('axios');
+import axios from 'axios';
 ```
 
 - GET
