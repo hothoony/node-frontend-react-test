@@ -17,7 +17,7 @@ const Page01 = () => {
                 isLogin = {isLogin}
             </div>
             <div>
-                <button onClick={onClickBtn}>do login</button>
+                <button onClick={onClickBtn}>set login 1</button>
             </div>
         </div>
     );
