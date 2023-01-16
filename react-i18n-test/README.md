@@ -7,7 +7,7 @@ npm install i18next
 ```
 
 ## 메시지 파일 만들기
-- ### ko `src/locale/lang/ko.json`
+- ### ko
 ```javascript
 // src/locale/lang/ko.json
 {
