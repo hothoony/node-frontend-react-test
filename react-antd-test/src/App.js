@@ -1,6 +1,7 @@
 import ButtonTest from './antd-comp-test/ButtonTest';
 import FormTest from './antd-comp-test/FormTest';
 import LoginForm from './antd-comp-test/LoginForm';
+import ModalTest from './antd-comp-test/ModalTest';
 import './App.css';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
         Learn React
         {/* <ButtonTest/> */}
         {/* <FormTest/> */}
-        <LoginForm/>
+        {/* <LoginForm/> */}
+        <ModalTest/>
       </header>
     </div>
   );
