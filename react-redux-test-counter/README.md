@@ -11,6 +11,8 @@ $ npm install redux react-redux
 ## Redux 소스 코드
 
 ### Action
+- store 변경시 사용할 action type 과
+- action 객체를 반환할 action 생성 함수를 정의한다
 ```javascript
 // src/redux/actions/countAction.js
 
@@ -61,17 +63,17 @@ export const countReset = () => {
         type: COUNT_RESET,
     }
 }
-
 ```
 
 ### Reducer
-- action 을 받아서 state 를 변경할
-- countReducer 를 만든다
+- action 을 받아서 state 를 변경할 countReducer 를 만든다
+- reducer 는 state 와 action 을 파라미터로 받는다
 ```javascript
 // src/redux/reducers/countReducer.js
 
 import { COUNT_UP, COUNT_DOWN, COUNT_RESET } from "../actions/countAction";
 
+// 초기 state
 const initialState = {
     count: 0,
 };
@@ -106,9 +108,8 @@ export const countReducer = (state = initialState, action) => {
             return state;
     }
 }
-
 ```
-- 여러 개 reducer 합쳐서 rootReducer 로 만든다
+- 여러 개의 reducer 를 합쳐서 하나의 rootReducer 로 만든다
 ```javascript
 // src/redux/reducers/rootReducer.js
 
@@ -121,11 +122,10 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
-
 ```
 
 ### Store
-- Store 를 생성한다
+- rootReducer 로 store 를 생성한다
 ```javascript
 // src/redux/store/store.js
 
@@ -135,10 +135,9 @@ import rootReducer from "../reducers/rootReducer";
 const store = createStore(rootReducer);
 
 export default store;
-
 ```
 
-- 생성한 Store 를 App 에 적용한다
+- 생성한 store 를 App 에 적용한다
 ```javascript
 // src/index.js
 
@@ -147,8 +146,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import store from './redux/store/store';
+import { Provider } from 'react-redux';  // 추가
+import store from './redux/store/store'; // 추가
 
 // console.log('store.state', store.state);
 store.subscribe(() => {
@@ -160,16 +159,14 @@ store.subscribe(() => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
+  <Provider store={store}> {/* 추가 */}
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Provider>
-
+  </Provider>              {/* 추가 */}
 );
 
 reportWebVitals();
-
 ```
 
 ## UI Component 소스 코드
@@ -226,7 +223,6 @@ function CounterEdit() {
 }
 
 export default CounterEdit;
-
 ```
 
 ### Redux Store 사용하기
@@ -252,7 +248,6 @@ function CounterView() {
 }
 
 export default CounterView;
-
 ```
 
 - 생성한 UI Components 를 App 에 적용한다
@@ -268,15 +263,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         React Redux
-        <CounterEdit/>
-        <CounterView/>
+        <CounterEdit/> {/* UI 적용 */}
+        <CounterView/> {/* UI 적용 */}
       </header>
     </div>
   );
 }
 
 export default App;
-
 ```
 
 ## 프로젝트 실행

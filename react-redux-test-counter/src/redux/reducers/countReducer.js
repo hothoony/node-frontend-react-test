@@ -1,5 +1,6 @@
 import { COUNT_UP, COUNT_DOWN, COUNT_RESET } from "../actions/countAction";
 
+// 초기 state
 const initialState = {
     count: 0,
 };
