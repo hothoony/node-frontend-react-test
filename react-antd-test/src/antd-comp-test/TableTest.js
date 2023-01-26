@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from "antd";
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 
 const TableTest = () => {
 
+    const [select, setSelect] = useState({
+        selectedRowKeys: [],
+        loading: false,
+    });
+    const { selectedRowKeys, loading } = select;
+    
     const [dataSource, setDataSource] = useState([]);
     const [count, setCount] = useState(0);
 
     let checkedRows = [];
 
     const rowSelection = {
-        // selectedRowKeys,
+        selectedRowKeys: selectedRowKeys,
+        onSelectAll: (selected, selectedRows, changeRows) => {
+            console.log('onSelectAll');
+            console.log('selected', selected);
+            console.log('selectedRows', selectedRows);
+            console.log('changeRows', changeRows);
+            // checkedRows = selectedRows;
+        },
         onChange: (selectedRowKeys, selectedRows) => {
+            console.log('onChange');
             console.log('selectedRowKeys', selectedRowKeys);
             console.log('selectedRows', selectedRows);
-            checkedRows = selectedRows;
+            setSelect({...select, selectedRowKeys});
+            // checkedRows = selectedRowKeys;
         },
     };
 
@@ -80,6 +96,11 @@ const TableTest = () => {
         deleteRow(record);
     };
 
+    const handleLoadData = () => {
+        console.log('handleLoadData');
+        loadData();
+    }
+
     const handleAdd = (e) => {
         console.log('handleAdd');
 
@@ -98,10 +119,13 @@ const TableTest = () => {
     const handleDel = (e) => {
         console.log('handleDel');
         console.log('checkedRows', checkedRows);
-        for (let record of checkedRows) {
+        console.log('select', select);
+        // for (let record of checkedRows) {
+        for (let record of select.selectedRowKeys) {
             console.log('record', record);
             setDataSource((pre) => {
-                return pre.filter(row => row.uid !== record.uid);
+                // return pre.filter(row => row.uid !== record.uid);
+                return pre.filter(row => row.uid !== record);
             });
         }
     };
@@ -114,6 +138,7 @@ const TableTest = () => {
     const handleGetCheckedRows = (e) => {
         console.log('handleGetCheckedRows');
         console.log('checkedRows', checkedRows);
+        console.log('select', select);
     }
 
     return (
@@ -121,6 +146,7 @@ const TableTest = () => {
             width: '100%',
         }}>
             <div>
+                <Button onClick={handleLoadData}>load Data</Button>
                 <Button onClick={handleAdd}>Add row</Button>
                 <Button onClick={handleDel}>Delete checked rows</Button>
             </div>
@@ -129,7 +155,7 @@ const TableTest = () => {
                 <Button onClick={handleShowDataSource}>show dataSource</Button>
             </div>
             <Table
-                rowKey="uid"
+                rowKey={'uid'}
                 columns={columns}
                 dataSource={dataSource}
                 rowSelection={rowSelection}
