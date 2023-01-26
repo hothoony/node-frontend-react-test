@@ -49,7 +49,7 @@ const TableTest = () => {
     const loadData = () => {
         console.log('## loadData');
 
-        let dataSize = 1003;
+        let dataSize = 17;
         // let dataSize = 0;
 
         const data = [];
