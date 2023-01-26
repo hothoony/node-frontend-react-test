@@ -10,11 +10,9 @@ const TableTest = () => {
         loading: false,
     });
     const { selectedRowKeys, loading } = select;
-    
+
     const [dataSource, setDataSource] = useState([]);
     const [count, setCount] = useState(0);
-
-    let checkedRows = [];
 
     const rowSelection = {
         selectedRowKeys: selectedRowKeys,
@@ -23,14 +21,13 @@ const TableTest = () => {
             console.log('selected', selected);
             console.log('selectedRows', selectedRows);
             console.log('changeRows', changeRows);
-            // checkedRows = selectedRows;
+            setSelect({...select, selectedRowKeys});
         },
         onChange: (selectedRowKeys, selectedRows) => {
             console.log('onChange');
             console.log('selectedRowKeys', selectedRowKeys);
             console.log('selectedRows', selectedRows);
             setSelect({...select, selectedRowKeys});
-            // checkedRows = selectedRowKeys;
         },
     };
 
@@ -49,12 +46,14 @@ const TableTest = () => {
         }},
     ];
 
-    const data = [];
     const loadData = () => {
         console.log('## loadData');
 
-        // const data = [];
-        for (let i = 0; i < 10; i++) {
+        let dataSize = 1003;
+        // let dataSize = 0;
+
+        const data = [];
+        for (let i = 0; i < dataSize; i++) {
             data.push({
                 uid: `${i}`,
                 name: `홍길동 ${i}`,
@@ -62,8 +61,11 @@ const TableTest = () => {
                 addr: `서울시 마포구 마포대로 ${i}`,
             });
         }
+
         setDataSource(data);
         setCount(data.length);
+
+        setSelect([]);
     };
 
     
@@ -118,9 +120,7 @@ const TableTest = () => {
 
     const handleDel = (e) => {
         console.log('handleDel');
-        console.log('checkedRows', checkedRows);
         console.log('select', select);
-        // for (let record of checkedRows) {
         for (let record of select.selectedRowKeys) {
             console.log('record', record);
             setDataSource((pre) => {
@@ -137,7 +137,6 @@ const TableTest = () => {
 
     const handleGetCheckedRows = (e) => {
         console.log('handleGetCheckedRows');
-        console.log('checkedRows', checkedRows);
         console.log('select', select);
     }
 
@@ -154,11 +153,19 @@ const TableTest = () => {
                 <Button onClick={handleGetCheckedRows}>get checked rows</Button>
                 <Button onClick={handleShowDataSource}>show dataSource</Button>
             </div>
+            <div>
+                총 {dataSource.length} 건
+            </div>
             <Table
                 rowKey={'uid'}
                 columns={columns}
                 dataSource={dataSource}
                 rowSelection={rowSelection}
+                pagination={{
+                    // position: 'bottom center',
+                    alignmentBottom: 'center',
+                    showQuickJumper: false,
+                }}
             ></Table>
         </div>
     );
