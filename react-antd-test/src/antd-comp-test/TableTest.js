@@ -32,7 +32,7 @@ const TableTest = () => {
     };
 
     const columns = [
-        {title: 'rowId' , dataIndex: 'uid' , },
+        {title: 'uid' , dataIndex: 'uid' , },
         {title: 'Name', dataIndex: 'name', render: (text) => <a>{text}</a>},
         {title: 'Age' , dataIndex: 'age' , },
         {title: 'Addr', dataIndex: 'addr', },
@@ -140,6 +140,13 @@ const TableTest = () => {
         console.log('select', select);
     }
 
+    const handleClearChecked = () => {
+        console.log('handleClearChecked');
+        setSelect({selectedRowKeys: []});
+        setSelect({selectedRowKeys: [1, 3]});
+        // setSelect([]);
+    }
+
     return (
         <div className="HERE2" style={{
             width: '100%',
@@ -152,6 +159,7 @@ const TableTest = () => {
             <div>
                 <Button onClick={handleGetCheckedRows}>get checked rows</Button>
                 <Button onClick={handleShowDataSource}>show dataSource</Button>
+                <Button onClick={handleClearChecked}>clear checked</Button>
             </div>
             <div>
                 총 {dataSource.length} 건
@@ -165,6 +173,14 @@ const TableTest = () => {
                     // position: 'bottom center',
                     alignmentBottom: 'center',
                     showQuickJumper: false,
+                    // pageSize: 10,
+                    showSizeChanger: false,
+                    showTotal: (total, range) => {
+                        return `총 ${total} 건`;
+                        // return total;
+                        // return `${range[0]} - ${range[1]} of ${total}`;
+                        // return <div>{range[0]} - {range[1]} of {total}</div>;
+                    },
                 }}
             ></Table>
         </div>
