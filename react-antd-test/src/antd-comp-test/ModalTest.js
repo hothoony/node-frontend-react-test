@@ -20,11 +20,17 @@ const ModalTest = () => {
                     <div>성공했습니다.</div>
                 </>
             ),
+            iconType: 'close-circle',
             closable: true,
+            maskClosable: true,
+            transitionName: '',
+            maskTransitionName: '',
+            centered: true,
             okText: '예',
             cancelText: '아니오',
         });
     };
+    
     const handlerConfirm = (e) => {
         modal.confirm({
             title: 'Confirm',
@@ -34,10 +40,19 @@ const ModalTest = () => {
                 </>
             ),
             closable: true,
+            maskClosable: true,
+            transitionName: '',
+            maskTransitionName: '',
+            centered: true,
             okText: '예',
             cancelText: '아니오',
+            onOk: () => {
+                console.log('ok clicked');
+                alert('ok clicked');
+            },
         });
     };
+
     const handlerInfo = (e) => {
         modal.info({
             title: 'Info',
@@ -47,9 +62,14 @@ const ModalTest = () => {
                 </>
             ),
             closable: true,
+            maskClosable: true,
+            transitionName: '',
+            maskTransitionName: '',
+            centered: true,
             okText: '확인',
         });
     };
+
     const handlerWarning = (e) => {
         modal.warning({
             title: 'Warning',
@@ -59,9 +79,14 @@ const ModalTest = () => {
                 </>
             ),
             closable: true,
+            maskClosable: true,
+            transitionName: '',
+            maskTransitionName: '',
+            centered: true,
             okText: '확인',
         });
     };
+
     const handlerError = (e) => {
         modal.error({
             title: 'Error',
@@ -71,6 +96,10 @@ const ModalTest = () => {
                 </>
             ),
             closable: true,
+            maskClosable: true,
+            transitionName: '',
+            maskTransitionName: '',
+            centered: true,
             okText: '확인',
         });
     };
