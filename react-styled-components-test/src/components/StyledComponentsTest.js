@@ -4,7 +4,6 @@ import MyButtonB from "./MyButtonB";
 function StyledComponentsTest() {
     return (
         <>
-            <h2>StyledComponentsTest</h2>
             <div>
                 <h3>MyButtonA</h3>
                 <div>

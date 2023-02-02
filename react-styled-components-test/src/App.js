@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          <h1>styled-components Test</h1>
           <StyledComponentsTest/>
         </div>
       </header>
