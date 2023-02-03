@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UserAddForm_multipleState() {
+function UserAddForm_singleState() {
 
     // style
     const formItem = {
@@ -13,78 +13,79 @@ function UserAddForm_multipleState() {
         marginRight: '10px',
     };
 
-    // 여러 개의 state 를 사용
-    const [userId, setUserId] = useState('');
-    const [userPw, setUserPw] = useState('');
-    const [userName, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [mobile, setMobile] = useState('');
+    // 한 개의 state 를 사용
+    const [userParam, setUserParam] = useState({
+        userId: '',
+        userPw: '',
+        userName: '',
+        email: '',
+        mobile: '',
+    });
+
+    const { userId, userPw } = userParam;
 
     // state change handler
-    const onChangeUserId = (e) => {
-        setUserId(e.target.value);
-    }
-    const onChangeUserPw= (e) => {
-        setUserPw(e.target.value);
-    }
-    const onChangeUserName = (e) => {
-        setUserName(e.target.value);
-    }
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value);
-    }
-    const onChangeMobile = (e) => {
-        setMobile(e.target.value);
+    const onChangeParam = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+
+        setUserParam(prevParam => {
+            return {
+                ...prevParam,
+                [name]: value,
+            };
+        });
     }
 
     const onClickReset = (e) => {
-        setUserId('');
-        setUserPw('');
-        setUserName('');
-        setEmail('');
-        setMobile('');
+        setUserParam(prevParam => {
+            return {
+                ...prevParam,
+                userId: '',
+                userPw: '',
+                userName: '',
+                email: '',
+                mobile: '',
+            };
+        });
     }
 
     const onClickConfirm = (e) => {
-        console.log('userId', userId);
-        console.log('userPw', userPw);
-        console.log('userName', userName);
-        console.log('email', email);
-        console.log('mobile', mobile);
+        console.log('userParam', userParam);
     }
 
     return (
         <>
             <div>
-                <h2>multiple state</h2>
+                <h2>single state</h2>
                 <div>
                     <label style={formItem}>
                         <span style={formLabel}>id</span>
-                        <input value={userId} onChange={onChangeUserId}/>
+                        <input name='userId' value={userId} onChange={onChangeParam}/>
                     </label>
                 </div>
                 <div>
                     <label style={formItem}>
                         <span style={formLabel}>Password</span>
-                        <input value={userPw} onChange={onChangeUserPw}/>
+                        <input name='userPw' value={userPw} onChange={onChangeParam}/>
                     </label>
                 </div>
                 <div>
                     <label style={formItem}>
                         <span style={formLabel}>name</span>
-                        <input value={userName} onChange={onChangeUserName}/>
+                        <input name='userName' value={userParam.userName} onChange={onChangeParam}/>
                     </label>
                 </div>
                 <div>
                     <label style={formItem}>
                         <span style={formLabel}>email</span>
-                        <input value={email} onChange={onChangeEmail}/>
+                        <input name='email' value={userParam.email} onChange={onChangeParam}/>
                     </label>
                 </div>
                 <div>
                     <label style={formItem}>
                         <span style={formLabel}>mobile</span>
-                        <input value={mobile} onChange={onChangeMobile}/>
+                        <input name='mobile' value={userParam.mobile} onChange={onChangeParam}/>
                     </label>
                 </div>
                 <div>
@@ -96,4 +97,4 @@ function UserAddForm_multipleState() {
     );
 }
 
-export default UserAddForm_multipleState;
+export default UserAddForm_singleState;
