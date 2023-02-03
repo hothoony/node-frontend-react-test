@@ -2,6 +2,7 @@ import './App.css';
 import Counter from './components/Counter';
 import MultipleInput from './components/MultipleInput';
 import SingleInput from './components/SingleInput';
+import UserAddForm_multipleState from './components/UserAddForm_multipleState';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         
         {/* <Counter/> */}
         {/* <SingleInput/> */}
-        <MultipleInput/>
+        {/* <MultipleInput/> */}
+        <UserAddForm_multipleState/>
 
       </header>
     </div>
