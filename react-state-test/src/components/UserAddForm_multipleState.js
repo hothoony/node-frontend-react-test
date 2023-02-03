@@ -37,8 +37,15 @@ function UserAddForm_multipleState() {
         setMobile(e.target.value);
     }
 
-    const onClickBtn = (e) => {
-        console.log('onClickBtn');
+    const onClickReset = (e) => {
+        setUserId('');
+        setUserPw('');
+        setUserName('');
+        setEmail('');
+        setMobile('');
+    }
+
+    const onClickConfirm = (e) => {
         console.log('userId', userId);
         console.log('userPw', userPw);
         console.log('userName', userName);
@@ -80,7 +87,8 @@ function UserAddForm_multipleState() {
                     </label>
                 </div>
                 <div>
-                    <button onClick={onClickBtn}>confirm</button>
+                    <button onClick={onClickReset}>reset</button>
+                    <button onClick={onClickConfirm}>confirm</button>
                 </div>
             </div>
         </>
