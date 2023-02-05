@@ -1,6 +1,11 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import UserAdd from "./UserAdd";
 import UserList from "./UserList";
+
+function countActiveUsers(users) {
+    console.log('=+> 활성 사용자를 세는 중...');
+    return users.filter(user => user.active).length;
+}
 
 const UserListContainer = () => {
 
@@ -58,6 +63,9 @@ const UserListContainer = () => {
     const handleDeleteAll = () => {
         setUsers([]);
     }
+
+    // const count = countActiveUsers(users);
+    const count = useMemo(() => countActiveUsers(users), [users]);
     
     return (
         <>
@@ -69,6 +77,7 @@ const UserListContainer = () => {
             />
             <button onClick={handleDeleteAll}>모두 삭제</button>
             <UserList users={users} onUserRemove={onUserRemove} onUserToggle={onUserToggle} />
+            <div>활성 사용자수 : {count}</div>
         </>
     );
 }
