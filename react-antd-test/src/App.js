@@ -10,6 +10,7 @@ import RowHorizontalAlignTest from './antd-comp-test/grid/RowHorizontalAlignTest
 import RowVerticalAlignTest from './antd-comp-test/grid/RowVerticalAlignTest';
 import LoginForm from './antd-comp-test/LoginForm';
 import ModalTest from './antd-comp-test/ModalTest';
+import ModalTest2 from './antd-comp-test/ModalTest2';
 import TableTest from './antd-comp-test/TableTest';
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
         {/* <FormTest/> */}
         {/* <LoginForm/> */}
         {/* <ModalTest/> */}
+        <ModalTest2/>
         {/* <TableTest/> */}
         {/* <DividerTest/> */}
         {/* <GridRowColTest/> */}
@@ -30,7 +32,7 @@ function App() {
         {/* <RowVerticalAlignTest/> */}
         {/* <CardTest/> */}
         {/* <MultipleCardInRow/> */}
-        <CardGridTest/>
+        {/* <CardGridTest/> */}
 
       </header>
     </div>
