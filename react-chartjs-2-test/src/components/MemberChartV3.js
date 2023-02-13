@@ -1,5 +1,5 @@
 import { BarElement, CategoryScale, Chart, Legend, LinearScale, Title, Tooltip } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Radio } from 'antd';
 import { useState } from "react";
