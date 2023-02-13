@@ -23,19 +23,19 @@ function MemberChartV3() {
                 label: '',
                 data: [],
                 backgroundColor: 'red',
-                // datalabels: {
-                //     display: false,
-                //     color: 'white',
-                // },
+                datalabels: {
+                    display: false,
+                    color: 'white',
+                },
             },
             {
                 label: '',
                 data: [],
                 backgroundColor: 'blue',
-                // datalabels: {
-                //     display: false,
-                //     color: 'white',
-                // },
+                datalabels: {
+                    display: false,
+                    color: 'white',
+                },
             },
         ],
     });
@@ -169,7 +169,6 @@ function MemberChartV3() {
                         backgroundColor: 'red',
                         datalabels: {
                             display: false,
-                            color: 'white',
                         },
                     },
                     {
@@ -178,7 +177,6 @@ function MemberChartV3() {
                         backgroundColor: 'blue',
                         datalabels: {
                             display: false,
-                            color: 'white',
                         },
                     },
                 ]
