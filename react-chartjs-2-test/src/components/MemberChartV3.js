@@ -16,13 +16,16 @@ Chart.register(
 
 function MemberChartV3() {
 
+    const COLOR1 = '#FD8C32';
+    const COLOR2 = '#2D8FE6';
+
     const [data, setData] = useState({
         labels: '',
         datasets: [
             {
                 label: '',
                 data: [],
-                backgroundColor: 'red',
+                backgroundColor: COLOR1,
                 datalabels: {
                     display: false,
                     color: 'white',
@@ -31,7 +34,7 @@ function MemberChartV3() {
             {
                 label: '',
                 data: [],
-                backgroundColor: 'blue',
+                backgroundColor: COLOR2,
                 datalabels: {
                     display: false,
                     color: 'white',
@@ -110,7 +113,7 @@ function MemberChartV3() {
                 },
                 dataset2: {
                     label: '이번주',
-                    data: [40, 30, 60, 70, 20, 50, 10],
+                    data: [50, 20, 40, 60, 10, 30, 70],
                 },
             });
         }
@@ -120,7 +123,7 @@ function MemberChartV3() {
                 labels: ['1일', '2일', '3일', '4일', '5일', '6일', '7일', '8일', '9일', '10일', '11일', '12일', '13일', '14일', '15일', '16일', '17일', '18일', '19일', '20일', '21일', '22일', '23일', '24일', '25일', '26일', '27일', '28일', '29일', '30일', '31일'],
                 dataset1: {
                     label: '지난달',
-                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+                    data: [12, 2, 3, 15, 7, 28, 29, 24, 13, 14, 4, 10, 5, 8, 21, 16, 6, 18, 19, 20, 31, 11, 27, 22, 25, 26, 9, 17, 23, 1, 30],
                 },
                 dataset2: {
                     label: '이번달',
@@ -134,7 +137,7 @@ function MemberChartV3() {
                 labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
                 dataset1: {
                     label: '작년',
-                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                    data: [4, 12, 7, 8, 5, 11, 3, 2, 9, 6, 1, 10],
                 },
                 dataset2: {
                     label: '올해',
@@ -166,7 +169,7 @@ function MemberChartV3() {
                     {
                         label: dataset1.label,
                         data:  dataset1.data,
-                        backgroundColor: 'red',
+                        backgroundColor: COLOR1,
                         datalabels: {
                             display: false,
                         },
@@ -174,7 +177,7 @@ function MemberChartV3() {
                     {
                         label: dataset2.label,
                         data: dataset2.data,
-                        backgroundColor: 'blue',
+                        backgroundColor: COLOR2,
                         datalabels: {
                             display: false,
                         },
