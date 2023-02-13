@@ -142,7 +142,7 @@ function MemberChartV1() {
                 position: 'top',
             },
             title: {
-                // display: true,
+                display: true,
                 text: '가입자',
             },
             dataLabels: {
