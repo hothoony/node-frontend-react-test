@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         Learn React
-        {/* <ButtonTest/> */}
+        <ButtonTest/>
         {/* <FormTest/> */}
         {/* <LoginForm/> */}
         {/* <ModalTest/> */}
