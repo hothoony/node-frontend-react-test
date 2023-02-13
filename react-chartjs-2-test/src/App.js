@@ -11,9 +11,9 @@ function App() {
       <header className="App-header">
         <MemberChartV3/>
         <MemberChartV2/>
-        <MemberChartV1/>
-        <VerticalChartV1/>
-        <VerticalChartV2/>
+        {/* <MemberChartV1/> */}
+        {/* <VerticalChartV1/> */}
+        {/* <VerticalChartV2/> */}
       </header>
     </div>
   );

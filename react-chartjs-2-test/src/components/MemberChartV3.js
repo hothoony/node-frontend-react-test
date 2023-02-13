@@ -51,9 +51,9 @@ function MemberChartV3() {
                 display: true,
                 text: '',
             },
-            // dataLabels: {
-            //     display: false,
-            // },
+            dataLabels: {
+                display: false,
+            },
         },
         // datalabels: {
         //     display: false,
@@ -133,11 +133,11 @@ function MemberChartV3() {
                 title: '가입자 (Year)',
                 labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
                 dataset1: {
-                    label: '지난해',
+                    label: '작년',
                     data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                 },
                 dataset2: {
-                    label: '이번해',
+                    label: '올해',
                     data: [2, 6, 11, 1, 9, 3, 7, 8, 12, 5, 4, 10],
                 },
             });
@@ -167,11 +167,19 @@ function MemberChartV3() {
                         label: dataset1.label,
                         data:  dataset1.data,
                         backgroundColor: 'red',
+                        datalabels: {
+                            display: false,
+                            color: 'white',
+                        },
                     },
                     {
                         label: dataset2.label,
                         data: dataset2.data,
                         backgroundColor: 'blue',
+                        datalabels: {
+                            display: false,
+                            color: 'white',
+                        },
                     },
                 ]
             },
