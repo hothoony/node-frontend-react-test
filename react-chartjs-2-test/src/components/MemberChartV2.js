@@ -15,15 +15,11 @@ Chart.register(
 function MemberChartV2() {
 
     const data1 = {
-        labels: [
-            // '일일', '주간', '월간', '연간',
-        ],
+        labels: ['가입 회원수'],
         datasets: [
             {
                 label: '어제',
-                data: [
-                    {x: '가입 회원수', y: 10}, 
-                ],
+                data: [10],
                 backgroundColor: 'red',
                 datalabels: {
                     display: false,
@@ -32,9 +28,7 @@ function MemberChartV2() {
             },
             {
                 label: '오늘',
-                data: [
-                    {x: '가입 회원수', y:20}, 
-                ],
+                data: [20],
                 backgroundColor: 'blue',
                 datalabels: {
                     display: false,
@@ -45,15 +39,11 @@ function MemberChartV2() {
     };
 
     const data2 = {
-        labels: [
-            // '일일', '주간', '월간', '연간',
-        ],
+        labels: ['일', '월', '화', '수', '목', '금', '토'],
         datasets: [
             {
                 label: '지난주',
-                data: [
-                    {x: '가입 회원수', y: 30}, 
-                ],
+                data: [10, 20, 30, 40, 50, 60, 70],
                 backgroundColor: 'red',
                 datalabels: {
                     display: false,
@@ -62,9 +52,7 @@ function MemberChartV2() {
             },
             {
                 label: '이번주',
-                data: [
-                    {x: '가입 회원수', y:40}, 
-                ],
+                data: [10, 20, 30, 40, 50, 60, 70],
                 backgroundColor: 'blue',
                 datalabels: {
                     display: false,
@@ -75,15 +63,11 @@ function MemberChartV2() {
     };
 
     const data3 = {
-        labels: [
-            // '일일', '주간', '월간', '연간',
-        ],
+        labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
         datasets: [
             {
                 label: '지난달',
-                data: [
-                    {x: '가입 회원수', y: 50}, 
-                ],
+                data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
                 backgroundColor: 'red',
                 datalabels: {
                     display: false,
@@ -92,9 +76,7 @@ function MemberChartV2() {
             },
             {
                 label: '이번달',
-                data: [
-                    {x: '가입 회원수', y:60}, 
-                ],
+                data: [26, 7, 10, 30, 24, 22, 5, 25, 14, 9, 13, 29, 2, 12, 16, 17, 4, 11, 31, 1, 23, 19, 3, 20, 6, 28, 8, 15, 27, 18, 21],
                 backgroundColor: 'blue',
                 datalabels: {
                     display: false,
@@ -105,15 +87,11 @@ function MemberChartV2() {
     };
 
     const data4 = {
-        labels: [
-            // '일일', '주간', '월간', '연간',
-        ],
+        labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
         datasets: [
             {
                 label: '지난해',
-                data: [
-                    {x: '가입 회원수', y: 70}, 
-                ],
+                data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                 backgroundColor: 'red',
                 datalabels: {
                     display: false,
@@ -122,9 +100,7 @@ function MemberChartV2() {
             },
             {
                 label: '올해',
-                data: [
-                    {x: '가입 회원수', y:80}, 
-                ],
+                data: [2, 6, 11, 1, 9, 3, 7, 8, 12, 5, 4, 10],
                 backgroundColor: 'blue',
                 datalabels: {
                     display: false,
@@ -134,7 +110,7 @@ function MemberChartV2() {
         ],
     };
 
-    const options1 = {
+    const options = {
         responsive: true,
         plugins: {
             legend: {
@@ -175,6 +151,46 @@ function MemberChartV2() {
         }
     };
 
+    const options1 = {
+        ...options, 
+        plugins: {
+            title: {
+                display: true,
+                text: '가입자 (Today)',
+            }
+        }
+    };
+
+    const options2 = {
+        ...options, 
+        plugins: {
+            title: {
+                display: true,
+                text: '가입자 (Week)',
+            }
+        }
+    };
+
+    const options3 = {
+        ...options, 
+        plugins: {
+            title: {
+                display: true,
+                text: '가입자 (Month)',
+            }
+        }
+    };
+
+    const options4 = {
+        ...options, 
+        plugins: {
+            title: {
+                display: true,
+                text: '가입자 (Year)',
+            }
+        }
+    };
+
     return (
         <>
             <h2>MemberChartV2</h2>
@@ -183,13 +199,13 @@ function MemberChartV2() {
                     <Bar data={data1} options={options1} />
                 </div>
                 <div style={{display: 'inline-block', width: '400px',}}>
-                    <Bar data={data2} options={options1} />
+                    <Bar data={data2} options={options2} />
                 </div>
                 <div style={{display: 'inline-block', width: '400px',}}>
-                    <Bar data={data3} options={options1} />
+                    <Bar data={data3} options={options3} />
                 </div>
                 <div style={{display: 'inline-block', width: '400px',}}>
-                    <Bar data={data4} options={options1} />
+                    <Bar data={data4} options={options4} />
                 </div>
             </div>
         </>
