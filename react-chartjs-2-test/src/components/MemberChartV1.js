@@ -52,7 +52,7 @@ function MemberChartV1() {
             {
                 label: '지난주',
                 data: [
-                    {x: '가입 회원수', y: 10}, 
+                    {x: '가입 회원수', y: 30}, 
                 ],
                 backgroundColor: 'red',
                 datalabels: {
@@ -63,7 +63,7 @@ function MemberChartV1() {
             {
                 label: '이번주',
                 data: [
-                    {x: '가입 회원수', y:20}, 
+                    {x: '가입 회원수', y:40}, 
                 ],
                 backgroundColor: 'blue',
                 datalabels: {
@@ -82,7 +82,7 @@ function MemberChartV1() {
             {
                 label: '지난달',
                 data: [
-                    {x: '가입 회원수', y: 10}, 
+                    {x: '가입 회원수', y: 50}, 
                 ],
                 backgroundColor: 'red',
                 datalabels: {
@@ -93,7 +93,7 @@ function MemberChartV1() {
             {
                 label: '이번달',
                 data: [
-                    {x: '가입 회원수', y:20}, 
+                    {x: '가입 회원수', y:60}, 
                 ],
                 backgroundColor: 'blue',
                 datalabels: {
@@ -112,7 +112,7 @@ function MemberChartV1() {
             {
                 label: '지난해',
                 data: [
-                    {x: '가입 회원수', y: 10}, 
+                    {x: '가입 회원수', y: 70}, 
                 ],
                 backgroundColor: 'red',
                 datalabels: {
@@ -123,7 +123,7 @@ function MemberChartV1() {
             {
                 label: '올해',
                 data: [
-                    {x: '가입 회원수', y:20}, 
+                    {x: '가입 회원수', y:80}, 
                 ],
                 backgroundColor: 'blue',
                 datalabels: {
