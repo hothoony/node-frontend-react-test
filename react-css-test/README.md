@@ -26,6 +26,11 @@ $ npm install styled-components
         color: blue;
         font-size: 40px;
     }
+
+    .global-style2 {
+        color: pink;
+        font-size: 40px;
+    }
     ```
     ```javascript
     // src/components/css02/CSS02-global-style.js
@@ -36,6 +41,19 @@ $ npm install styled-components
         return (
             <div className="globalStyle">
                 global style
+            </div>
+        );
+    }
+    ```
+    ```javascript
+    // src/components/css02/CSS03-global-style.js
+
+    import '../../css/globalStyle.css';
+
+    const CSS03 = () => {
+        return (
+            <div className='global-style2'>
+                global style 2
             </div>
         );
     }
