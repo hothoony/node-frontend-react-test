@@ -5,7 +5,8 @@ import Menu from './compoennts/Menu';
 import Home from './compoennts/page/Home';
 import About from './compoennts/page/About';
 import Contact from './compoennts/page/Contact';
-import Join from './compoennts/page/Join';
+import Join from './compoennts/page/signup/Join';
+import SignIn from './compoennts/page/members/SignIn';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
             <Route path="/" element={<Home/>}></Route>
             <Route path="/about" element={<About/>}></Route>
             <Route path="/contact" element={<Contact/>}></Route>
-            <Route path="/signup" element={<Join/>}></Route>
+            <Route path="/members/signup" element={<Join/>}></Route>
+            <Route path="/members/signin" element={<SignIn/>}></Route>
           </Routes>
         </BrowserRouter>
       </header>

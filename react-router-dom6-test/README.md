@@ -37,3 +37,6 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
     <li><Link to="/signup">Join</Link></li>
 </ul>
 ```
+
+## 각 페이지 파일들
+- `src/components/page/` 폴더 아래에 각 page 들을 만든다
