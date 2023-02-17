@@ -16,7 +16,7 @@ const PageMenu = () => {
 
     return (
         <div style={styles.div}>
-            <h3 style={styles.margin0}>MainMenu</h3>
+            <h3 style={styles.margin0}>PageMenu</h3>
             <ul style={styles.margin0}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about" replace={true}>About</Link></li>
