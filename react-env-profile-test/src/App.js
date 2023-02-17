@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        React cross-env
+        cross-env & env-cmd
         <EnvView/>
       </header>
     </div>

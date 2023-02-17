@@ -44,21 +44,41 @@ const EnvView = () => {
 - `env-cmd -f .env.환경파일` 추가
 ```
   "scripts": {
-    "start": "env-cmd -f .env.development react-scripts start",
-    "build": "env-cmd -f .env.production react-scripts build",
+    
+    "env-test-dev": "env-cmd -f .env.development react-scripts start",
+    "env-test-prd": "env-cmd -f .env.production react-scripts start",
+    
+    "start":   "env-cmd -f .env.development react-scripts start",
+    "develop": "env-cmd -f .env.production react-scripts build",
+    "build":   "env-cmd -f .env.production react-scripts build",
+    
+    ...
   },
 ```
 
-## 개발환경 변수 적용 확인
+## 로컬에서 개발환경, 운영환경 env 적용 테스트하기
+```bash
+## 개발환경
+$ yarn run env-test-dev
+
+## 운영환경
+$ yarn run env-test-prd
+```
+
+## 로컬 실행 (개발환경 변수 적용 확인)
 - `yarn start`
 
-## 운영환경 변수 적용 확인
+## 개발 빌드 (개발환경 변수 적용 확인)
+- `yarn develop`
+
+## 운영 빌드 (운영환경 변수 적용 확인)
 - `yarn build`
-- `build` 폴더를 `serve` 로 실행
+
+## `build` 폴더를 로컬에서 실행하기
 ```bash
 ## serve 설치
-npm install serve
+$ npm install serve
 
 ## serve 로 build 폴더 실행
-npx serve -s build
+$ npx serve -s build
 ```

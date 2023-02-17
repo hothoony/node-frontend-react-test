@@ -1,5 +1,5 @@
 {
-  "name": "react-cross-env-test",
+  "name": "react-env-profile-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,8 +15,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    
+    "env-test-dev": "env-cmd -f .env.development react-scripts start",
+    "env-test-prd": "env-cmd -f .env.production react-scripts start",
+    
     "start": "env-cmd -f .env.development react-scripts start",
+    "develop": "env-cmd -f .env.production react-scripts build",
     "build": "env-cmd -f .env.production react-scripts build",
+    
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
