@@ -20,8 +20,8 @@ const PageMenu = () => {
             <ul style={styles.margin0}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about" replace={true}>About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><a onClick={onClickJoin}>Join</a></li>
+                <li><Link to="/contact" replace={true}>Contact</Link></li>
+                <li><a href='' onClick={onClickJoin}>Join</a></li>
                 <li><a onClick={onClickSignin}>Sign-in</a></li>
             </ul>
         </div>
