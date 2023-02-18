@@ -5,11 +5,11 @@ import Menu from './compoennts/menus/MainMenu';
 import Home from './compoennts/page/Home';
 import About from './compoennts/page/About';
 import Contact from './compoennts/page/Contact';
-import SignUp from './compoennts/page/auth/SignUp';
 import SignIn from './compoennts/page/auth/SignIn';
 import Page404 from './compoennts/page/Page404';
 import UserList from './compoennts/page/users/UserList';
 import UserView from './compoennts/page/users/UserView';
+import AuthRoute from './compoennts/page/auth/AuthRoute';
 
 function App() {
   return (
@@ -18,18 +18,19 @@ function App() {
         React Router with Authentication
         <BrowserRouter>
           <Menu></Menu>
+          <div>
+            <div>'/users' URI 는 로그인이 필요한 페이지</div>
+            <div>나머지 URI 는 로그인이 필요없는 페이지</div>
+          </div>
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/>
             <Route exact path="/contact" component={Contact}/>
-            <Route exact path="/auth/signup">
-              <SignUp/>
-            </Route>
             <Route exact path="/auth/signin">
               <SignIn/>
             </Route>
-            <Route exact path="/users" component={UserList}></Route>
-            <Route exact path="/users/:userId" component={UserView}/>
+            <AuthRoute exact path="/users" component={UserList}/>
+            <AuthRoute exact path="/users/:userId" component={UserView}/>
             <Route path="*" component={Page404}/>
           </Switch>
         </BrowserRouter>

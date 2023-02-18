@@ -12,7 +12,6 @@ const MainMenu = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/auth/signup">Sign-up</Link></li>
                 <li><Link to="/auth/signin">Sign-in</Link></li>
                 <li><Link to="/users">Users</Link></li>
                 <li><Link to="/users/1">User1</Link></li>

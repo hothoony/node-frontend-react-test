@@ -1,11 +1,15 @@
 const Child = (props) => {
 
-    // Parent 컴포넌트에서 데이터를 받는다
-    let { name, age, onChildChange } = props;
+    let { 
+        // Parent 컴포넌트로 부터 데이터를 받는다
+        name, age, 
+        // Parent 컴포넌트로 데이터를 전달한다
+        onChildChange 
+    } = props;
 
     const passToParent = () => {
         let data = {
-            name: 'paul',
+            name: 'paul (from child)',
             age: 30,
         };
         console.log('passToParent', data);

@@ -1,13 +1,13 @@
 import './App.css';
-import Child from './components/Child';
-import Parent from './components/Parent';
+import Test1 from './components/test1/Test1';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Parent 와 Child 컴포넌트 간에 데이터 전달
-        <Parent />
+        
+        <Test1/>
+
       </header>
     </div>
   );
