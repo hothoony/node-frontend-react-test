@@ -1,7 +1,7 @@
 import React from "react";
-import Parent from "./Parent";
+import Parent2 from "./Parent2";
 
-const Test1 = () => {
+const Test2 = () => {
 
     const styles = {
         box: {
@@ -12,14 +12,14 @@ const Test1 = () => {
 
     return (
         <div style={styles.box}>
-            <h2>Test1</h2>
+            <h2>Test2</h2>
             <p>
                 Parent 와 Child 컴포넌트 간에 데이터 전달<br/>
-                데이터를 Parent 에 정의
+                데이터를 Child 에 정의
             </p>
-            <Parent />
+            <Parent2 />
         </div>
     );
 }
 
-export default Test1;
+export default Test2;
