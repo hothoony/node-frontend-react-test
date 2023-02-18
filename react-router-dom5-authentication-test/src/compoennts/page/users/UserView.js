@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import LoginInfo from '../auth/LoginInfo';
 
 const UserView = () => {
 
@@ -8,6 +9,7 @@ const UserView = () => {
     return (
         <div>
             <h1>UserView, userId={userId}</h1>
+            <LoginInfo/>
         </div>
     );
 }

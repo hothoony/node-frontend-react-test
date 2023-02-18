@@ -1,10 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import SignIn from './SignIn';
 
 const AuthRoute = ({ component: Component, ...rest }) => {
-
-    const isLogin = false;
 
     return (
         <>
@@ -17,7 +14,6 @@ const AuthRoute = ({ component: Component, ...rest }) => {
                             <Component {...props} />
                         ) : (
                             <Redirect to={`/auth/signin?redirect=${props.location.pathname}`}/>
-                            // <SignIn message={`require login > ${props.location.pathname}`}/>
                         )
                     );
                 }}
