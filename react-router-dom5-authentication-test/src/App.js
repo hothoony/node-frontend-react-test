@@ -28,14 +28,8 @@ function App() {
             <Route exact path="/auth/signin">
               <SignIn/>
             </Route>
-
-            {/* <Route exact path="/users" component={UserList}>
-              <Route path=":userId" component={UserView}/>
-            </Route> */}
-
             <Route exact path="/users" component={UserList}></Route>
             <Route exact path="/users/:userId" component={UserView}/>
-            
             <Route path="*" component={Page404}/>
           </Switch>
         </BrowserRouter>
