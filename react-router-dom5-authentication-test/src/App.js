@@ -20,12 +20,12 @@ function App() {
           <Menu></Menu>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/contact" component={Contact}/>
-            <Route path="/auth/signup">
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/contact" component={Contact}/>
+            <Route exact path="/auth/signup">
               <SignUp/>
             </Route>
-            <Route path="/auth/signin">
+            <Route exact path="/auth/signin">
               <SignIn/>
             </Route>
 
@@ -34,7 +34,7 @@ function App() {
             </Route> */}
 
             <Route exact path="/users" component={UserList}></Route>
-            <Route path="/users/:userId" component={UserView}/>
+            <Route exact path="/users/:userId" component={UserView}/>
             
             <Route path="*" component={Page404}/>
           </Switch>
