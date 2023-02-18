@@ -20,7 +20,7 @@ const Child = (props) => {
 
     return (
         <div>
-            <h1>Child</h1>
+            <h3>Child</h3>
             <div>
                 <span>{name}, {age}</span>
             </div>

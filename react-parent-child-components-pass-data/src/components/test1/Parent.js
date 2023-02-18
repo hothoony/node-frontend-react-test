@@ -22,7 +22,7 @@ const Parent = () => {
 
     return (
         <div>
-            <h1>Parent</h1>
+            <h3>Parent</h3>
             <div>
                 <span>{data.name}, {data.age}</span>
             </div>
