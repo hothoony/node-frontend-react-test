@@ -1,5 +1,5 @@
-import React from 'react';
-import LoginStatus from './LoginStatus';
+import React, { useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
 const SignIn = (props) => {
 
@@ -11,35 +11,58 @@ const SignIn = (props) => {
         }
     };
 
-    const onLogin = (e) => {
+    const history = useHistory();
+    const params = useParams();
+
+    const onLogin = () => {
         console.log('onLogin');
+        
+        localStorage.setItem('isLogin', true);
+        console.log('localStorage isLogin', localStorage.getItem('isLogin'));
+
+        let findString = '?redirect=';
+        let pos = window.location.search.indexOf(findString);
+        let redirectUri = window.location.search.slice(findString.length);
+        history.push(redirectUri);
     }
 
-    const setLogin = () => {
+    const onLogout = () => {
+        console.log('onLogout');
         
+        localStorage.setItem('isLogin', false);
+        console.log('localStorage isLogin', localStorage.getItem('isLogin'));
+
+        history.push('/');
     }
 
     return (
         <div>
-            <h1>Sign-in</h1>
+            <h1>Sign-in/out</h1>
             <div>
-                {props.message}
-            </div>
-            <div>
-                <div>
-                    <LoginStatus setLogin={setLogin}/>
-                </div>
-                <div>
-                    <span style={styles.formLabel}>ID</span>
-                    <input type="text"/>
-                </div>
-                <div>
-                    <span style={styles.formLabel}>PW</span>
-                    <input type="password"/>
-                </div>
-                <div>
-                    <button type="submit" onClick={onLogin}>login</button>
-                </div>
+                {
+                    (!JSON.parse(localStorage.getItem('isLogin'))) ? (
+                        <>
+                            <div>
+                                <span style={styles.formLabel}>ID</span>
+                                <input type="text" name="username"/>
+                            </div>
+                            <div>
+                                <span style={styles.formLabel}>PW</span>
+                                <input type="password" name="password"/>
+                            </div>
+                            <div>
+                                <button type="submit" onClick={onLogin}>login</button>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div>
+                                <span>로그인 되었습니다</span>&nbsp;&nbsp;
+                                <button type="submit" onClick={onLogout}>logout</button>
+                            </div>
+                        </>
+                    )
+                }
             </div>
         </div>
     );

@@ -10,14 +10,17 @@ const AuthRoute = ({ component: Component, ...rest }) => {
         <>
             <Route
                 {...rest}
-                render={props => (
-                    (isLogin) ? (
-                        <Component {...props} />
-                    ) : (
-                        <Redirect to="/auth/signin"/>
-                        // <SignIn message={`require login > ${props.location.pathname}`}/>
-                    )
-                )}
+                render={props => {
+                    const isLogin = JSON.parse(localStorage.getItem('isLogin'));
+                    return (
+                        (isLogin) ? (
+                            <Component {...props} />
+                        ) : (
+                            <Redirect to={`/auth/signin?redirect=${props.location.pathname}`}/>
+                            // <SignIn message={`require login > ${props.location.pathname}`}/>
+                        )
+                    );
+                }}
             />
         </>
     );

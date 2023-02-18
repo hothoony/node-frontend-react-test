@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { styles } from '../../common/styles.js';
 import '../../common/styles.css'
 
@@ -12,7 +12,7 @@ const MainMenu = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/auth/signin">Sign-in</Link></li>
+                <li><Link to="/auth/signin">Sign-in/out</Link></li>
                 <li><Link to="/users">Users</Link></li>
                 <li><Link to="/users/1">User1</Link></li>
                 <li><Link to="/users/2">User2</Link></li>
