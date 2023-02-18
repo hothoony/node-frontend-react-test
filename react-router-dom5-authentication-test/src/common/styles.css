@@ -1,0 +1,8 @@
+.mainMenu {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+}
+.mainMenu li {
+    padding: 0 8px;
+}
