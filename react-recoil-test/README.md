@@ -61,13 +61,13 @@ const [isLogin, setIsLogin] = useRecoilState(loginState);
 
 ### useRecoilValue
 ```javascript
-// 값만 필요한 경우에 사용
+// 값 만 필요한 경우에 사용
 const isLogin = useRecoilValue(isLogin);
 ```
 
 ### useSetRecoilState
 ```javascript
-// set값 만 필요한 경우에 사용
+// set 만 필요한 경우에 사용
 const setIsLogin = useSetRecoilState(isLogin);
 ```
 
