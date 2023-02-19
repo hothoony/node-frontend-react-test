@@ -1,70 +1,154 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## recoil 데이터 정의
 
-## Available Scripts
+- ### atom
+```javascript
+export const datetimeState = atom({
+    key: 'datetimeState', // 키 값
+    default: (new Date()).getTime(), // 초기 값
+});
+```
 
-In the project directory, you can run:
+- ### selector
+```javascript
+export const datetimeStrState = selector({
+    key: 'dateTimeStrState', // 키 값
+    get: ({get}) => { // getter 함수 정의
+        const datetime = get(datetimeState);
+        const date = new Date(datetime);
 
-### `npm start`
+        const yyyy = lzp2(date.getFullYear());
+        const mm   = lzp2(date.getMonth() + 1);
+        const dd   = lzp2(date.getDate());
+        const hh = lzp2(date.getHours());
+        const mi = lzp2(date.getMinutes());
+        const ss = lzp2(date.getSeconds());
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        return yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
+    },
+    set: ({set}, newValue) => { // setter 함수 정의
+        const date = new Date(newValue);
+        set(datetimeState, date.getTime());
+    },
+});
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## `atomDateTime.js`
+```javascript
+// src/components/datetime/atomDateTime.js
 
-### `npm test`
+import { atom, selector } from "recoil";
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export const datetimeState = atom({
+    key: 'datetimeState',
+    default: (new Date()).getTime(),
+});
 
-### `npm run build`
+export const dateState = selector({
+    key: 'dateState',
+    get: ({get}) => {
+        const datetime = get(datetimeState);
+        const date = new Date(datetime);
+        
+        const yyyy = lzp2(date.getFullYear());
+        const mm   = lzp2(date.getMonth() + 1);
+        const dd   = lzp2(date.getDate());
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        return yyyy + '-' + mm + '-' + dd;
+    },
+});
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export const timeState = selector({
+    key: 'timeState',
+    get: ({get}) => {
+        const datetime = get(datetimeState);
+        const date = new Date(datetime);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        const hh = lzp2(date.getHours());
+        const mi = lzp2(date.getMinutes());
+        const ss = lzp2(date.getSeconds());
 
-### `npm run eject`
+        return hh + ':' + mi + ':' + ss;
+    },
+});
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export const datetimeStrState = selector({
+    key: 'dateTimeStrState',
+    get: ({get}) => {
+        const datetime = get(datetimeState);
+        const date = new Date(datetime);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        const yyyy = lzp2(date.getFullYear());
+        const mm   = lzp2(date.getMonth() + 1);
+        const dd   = lzp2(date.getDate());
+        const hh = lzp2(date.getHours());
+        const mi = lzp2(date.getMinutes());
+        const ss = lzp2(date.getSeconds());
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+        return yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
+    },
+    set: ({set}, newValue) => {
+        const date = new Date(newValue);
+        set(datetimeState, date.getTime());
+    },
+});
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+const lzp2 = (num) => {
+    let str = String(num);
+    while (str.length < 2) {
+        str = '0' + str;
+    }
+    return str;
+}
+```
 
-## Learn More
+## `DateTimeView.js`
+```javascript
+// src/components/datetime/DateTimeView.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+import React from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { datetimeState, dateState, timeState, datetimeStrState } from "./atomDateTime";
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+const DateTimeView = () => {
 
-### Code Splitting
+    const [datetime, setDateTime] = useRecoilState(datetimeState);
+    const yyyymmdd = useRecoilValue(dateState);
+    const hhmiss = useRecoilValue(timeState);
+    const [datetimeStr, setDatetimeStr] = useRecoilState(datetimeStrState);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    const changeDateTimeState = () => {
+        // datetimeState 를 직접 변경한다
+        setDateTime(1676807314000);
+    }
 
-### Analyzing the Bundle Size
+    const changeDateTimeStr = () => {
+        // datetimeStrState selector 의 set 을 이용해서
+        // '2023-02-19 12:34:56' 를 파라미터로 입력받고
+        // datetimeState 를 변경한다
+        setDatetimeStr('2023-02-19 12:34:56');
+    }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    return (
+        <div>
+            <h2>DateTimeView</h2>
+            <div>
+                <ul>
+                    <li>datetime = {datetime}</li>
+                    <li>yyyymmdd = {yyyymmdd}</li>
+                    <li>hhmiss = {hhmiss}</li>
+                    <li>datetimeStr = {datetimeStr}</li>
+                </ul>
+            </div>
+            <div>
+                <button onClick={changeDateTimeState}>change datetimeState</button>
+            </div>
+            <div>
+                <button onClick={changeDateTimeStr}>change datetimeStr</button>
+            </div>
+        </div>
+    );
+}
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default DateTimeView;
+```

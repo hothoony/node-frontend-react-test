@@ -10,10 +10,14 @@ const DateTimeView = () => {
     const [datetimeStr, setDatetimeStr] = useRecoilState(datetimeStrState);
 
     const changeDateTimeState = () => {
+        // datetimeState 를 직접 변경한다
         setDateTime(1676807314000);
     }
 
     const changeDateTimeStr = () => {
+        // datetimeStrState selector 의 set 을 이용해서
+        // '2023-02-19 12:34:56' 를 파라미터로 입력받고
+        // datetimeState 를 변경한다
         setDatetimeStr('2023-02-19 12:34:56');
     }
 
@@ -30,6 +34,8 @@ const DateTimeView = () => {
             </div>
             <div>
                 <button onClick={changeDateTimeState}>change datetimeState</button>
+            </div>
+            <div>
                 <button onClick={changeDateTimeStr}>change datetimeStr</button>
             </div>
         </div>
