@@ -16,7 +16,13 @@ const Nav = () => {
                     <Link to='/about'>About</Link>
                 </li>
                 <li>
+                    <Link to='/store'>Store</Link>
+                </li>
+                <li>
                     <Link to='/admin'>Dashboard</Link>
+                </li>
+                <li>
+                    <Link to='/admin/manage'>Manage</Link>
                 </li>
                 <li>
                     <Link to='/admin/setting'>Setting</Link>

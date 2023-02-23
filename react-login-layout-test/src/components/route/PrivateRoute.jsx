@@ -6,9 +6,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     const history = useHistory();
 
     const isLogin = localStorage.getItem('isTestLogin');
-    console.log('PrivateRoute isLogin', isLogin);
-
-    console.log('isLogin', JSON.parse(isLogin), (JSON.parse(isLogin) === true));
+    console.log('PrivateRoute isLogin', isLogin, JSON.parse(isLogin), (JSON.parse(isLogin) === true));
 
     if (!JSON.parse(isLogin)) {
         history.replace(`/login?redirect=${location.pathname}`);

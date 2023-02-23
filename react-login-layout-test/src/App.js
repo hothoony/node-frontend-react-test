@@ -10,6 +10,8 @@ import AdminLayout from './components/layout/AdminLayout';
 import PrivateRoute from './components/route/PrivateRoute';
 import { RecoilRoot } from 'recoil';
 import NoPage from './components/NoPage';
+import Store from './components/front/Store';
+import Manage from './components/admin/Manage';
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
                   </PrivateRoute> */}
                   
                   <PrivateRoute exact path='/admin' component={Dashboard}/>
+                  <PrivateRoute exact path='/admin/manage' component={Manage}/>
                   <PrivateRoute exact path='/admin/setting' component={Setting}/>
 
                 </Switch>
@@ -42,6 +45,7 @@ function App() {
                 <Switch>
                   <Route exact path='/' component={Home}/>
                   <Route path='/about' component={About}/>
+                  <Route path='/store' component={Store}/>
                 </Switch>
               </FrontLayout>
             </Route>
