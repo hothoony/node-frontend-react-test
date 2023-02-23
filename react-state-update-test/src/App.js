@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        React state update test
+        state update test
 
         {/* <StateTest01/> */}
         <StateTest02/>

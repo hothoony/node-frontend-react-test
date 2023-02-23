@@ -24,6 +24,10 @@ const StateTest02 = () => {
         }
     }, [isSaveClick]);
 
+    useEffect(() => {
+        console.log('## useEffect formData changed', formData);
+    }, [formData]);
+
     const onChangeUsername = (e) => {
         console.log('## onChangeUsername', e.target.value);
         setFormData((prevState) => ({
@@ -110,13 +114,13 @@ const StateTest02 = () => {
                 <button onClick={checkState}>check state</button>
             </div>
             <div>
+                <button onClick={onSave}>Save (state 를 변경하지 않고 서버로 전송)</button>
+            </div>
+            <div>
                 <button onClick={onPreSave1}>preSave1 (state 를 변경하고 서버로 전송)</button>
             </div>
             <div>
                 <button onClick={onPreSave2}>preSave2 (state 를 변경하고 서버로 전송, useEffect 사용)</button>
-            </div>
-            <div>
-                <button onClick={onSave}>Save (state 를 변경하지 않고 서버로 전송)</button>
             </div>
         </>
     );
