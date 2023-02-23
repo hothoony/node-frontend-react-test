@@ -7,6 +7,7 @@ import Home from './components/front/Home';
 import Login from './components/front/Login';
 import FrontLayout from './components/layout/FrontLayout';
 import AdminLayout from './components/layout/AdminLayout';
+import PrivateRoute from './components/route/PrivateRoute';
 
 function App() {
   return (
@@ -21,7 +22,13 @@ function App() {
             <Route exact path='/admin/:path?'>
               <AdminLayout>
                 <Switch>
-                  <Route exact path='/admin' component={Dashboard}/>
+                  
+                  {/* <Route exact path='/admin' component={Dashboard}/> */}
+                  
+                  <PrivateRoute exact path='/admin'>
+                    <Dashboard/>
+                  </PrivateRoute>
+                  
                   <Route path='/admin/setting' component={Setting}/>
                 </Switch>
               </AdminLayout>
