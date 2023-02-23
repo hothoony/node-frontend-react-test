@@ -1,13 +1,13 @@
 import React from "react";
-import Footer from "../Footer";
-import Header from "../Header";
-import Nav from "../Nav";
+import Footer from "./common/Footer";
+import Header from "./common/Header";
+import Nav from "./common/Nav";
 
-const Main = ({ children }) => {
+const FrontLayout = ({ children }) => {
     return (
         <>
             <div>
-                <h3>front Layout</h3>
+                <h3>FrontLayout</h3>
                 <Header/>
             </div>
             <div>
@@ -21,4 +21,4 @@ const Main = ({ children }) => {
     );
 }
 
-export default Main;
+export default FrontLayout;

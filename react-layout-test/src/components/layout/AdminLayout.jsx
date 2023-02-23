@@ -1,13 +1,13 @@
 import React from "react";
-import Footer from "../Footer";
-import Header from "../Header";
-import Nav from "../Nav";
+import Footer from "./common/Footer";
+import Header from "./common/Header";
+import Nav from "./common/Nav";
 
-const MainAdmin = ({ children }) => {
+const AdminLayout = ({ children }) => {
     return (
         <>
             <div>
-                <h3>admin Layout</h3>
+                <h3>AdminLayout</h3>
                 <Header/>
             </div>
             <div>
@@ -21,4 +21,4 @@ const MainAdmin = ({ children }) => {
     );
 }
 
-export default MainAdmin;
+export default AdminLayout;
