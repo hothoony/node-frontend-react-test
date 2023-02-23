@@ -16,22 +16,23 @@ const PrivateRoute = ({ children, ...rest }) => {
     }
 
     return (
-        <Route
-            {...rest}
-            render={({ location }) => {
+        <Route {...rest} />
+        // <Route
+        //     {...rest}
+        //     render={({ location }) => {
 
-                // console.log('isLogin', JSON.parse(isLogin), (JSON.parse(isLogin) === true));
+        //         // console.log('isLogin', JSON.parse(isLogin), (JSON.parse(isLogin) === true));
 
-                // if (!JSON.parse(isLogin)) {
-                //     history.replace(`/login?redirect=${location.pathname}`);
-                //     return;
-                // }
+        //         // if (!JSON.parse(isLogin)) {
+        //         //     history.replace(`/login?redirect=${location.pathname}`);
+        //         //     return;
+        //         // }
 
-                return (
-                    children
-                );
-            }}
-        />
+        //         return (
+        //             children
+        //         );
+        //     }}
+        // />
     );
 };
 

@@ -26,13 +26,13 @@ function App() {
               <AdminLayout>
                 <Switch>
                   
-                  {/* <Route exact path='/admin' component={Dashboard}/> */}
-                  
-                  <PrivateRoute exact path='/admin'>
+                  {/* <PrivateRoute exact path='/admin'>
                     <Dashboard/>
-                  </PrivateRoute>
+                  </PrivateRoute> */}
                   
-                  <Route path='/admin/setting' component={Setting}/>
+                  <PrivateRoute exact path='/admin' component={Dashboard}/>
+                  <PrivateRoute exact path='/admin/setting' component={Setting}/>
+
                 </Switch>
               </AdminLayout>
             </Route>
