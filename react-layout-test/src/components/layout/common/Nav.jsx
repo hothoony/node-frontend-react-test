@@ -4,7 +4,7 @@ import '../../../style/style.css';
 
 const Nav = () => {
     return (
-        <div>
+        <div className={'nav'}>
             <ul>
                 <li>
                     <Link to='/login'>Login</Link>
