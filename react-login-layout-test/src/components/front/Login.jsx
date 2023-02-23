@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const Login = () => {
 
     const history = useHistory();
+    const location = useLocation();
+    console.log('location', location);
+    console.log('location.search', location.search);
+
+    const searchParams = new URLSearchParams(location.search);
+    console.log('searchParams', searchParams);
+    console.log('redirect', searchParams.get('redirect'));
 
     const isLogin = localStorage.getItem('isTestLogin');
 
@@ -13,12 +20,14 @@ const Login = () => {
 
     const onLogIn = () => {
         localStorage.setItem('isTestLogin', true);
-        history.replace('/');
+        const redirect = searchParams.get('redirect') || '/';
+        history.replace(redirect);
     }
 
     const onLogOut = () => {
         localStorage.removeItem('isTestLogin');
-        history.replace('/');
+        const redirect = searchParams.get('redirect') || '/';
+        history.replace(redirect);
     }
 
     useEffect(() => {

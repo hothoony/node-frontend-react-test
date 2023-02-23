@@ -1,23 +1,31 @@
-import { Link, Redirect, Route, useHistory } from "react-router-dom";
+import { Link, Redirect, Route, useHistory, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children, ...rest }) => {
+
+    const location = useLocation();
+    const history = useHistory();
 
     const isLogin = localStorage.getItem('isTestLogin');
     console.log('PrivateRoute isLogin', isLogin);
 
-    const history = useHistory();
+    console.log('isLogin', JSON.parse(isLogin), (JSON.parse(isLogin) === true));
+
+    if (!JSON.parse(isLogin)) {
+        history.replace(`/login?redirect=${location.pathname}`);
+        return;
+    }
 
     return (
         <Route
             {...rest}
             render={({ location }) => {
 
-                console.log('isLogin', JSON.parse(isLogin), (JSON.parse(isLogin) === true));
+                // console.log('isLogin', JSON.parse(isLogin), (JSON.parse(isLogin) === true));
 
-                if (!JSON.parse(isLogin)) {
-                    history.replace(`/login?redirect=${location.pathname}`);
-                    return;
-                }
+                // if (!JSON.parse(isLogin)) {
+                //     history.replace(`/login?redirect=${location.pathname}`);
+                //     return;
+                // }
 
                 return (
                     children
