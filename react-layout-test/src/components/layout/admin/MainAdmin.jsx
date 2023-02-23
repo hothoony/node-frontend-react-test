@@ -1,11 +1,23 @@
-import NavAdmin from "./NavAdmin";
+import React from "react";
+import Footer from "../Footer";
+import Header from "../Header";
+import Nav from "../Nav";
 
-const MainAdmin = () => {
+const MainAdmin = ({ children }) => {
     return (
-        <div>
-            <NavAdmin/>
-            MainAdmin
-        </div>
+        <>
+            <div>
+                <h3>admin Layout</h3>
+                <Header/>
+            </div>
+            <div>
+                <Nav/>
+                {children}
+            </div>
+            <div>
+                <Footer/>
+            </div>
+        </>
     );
 }
 

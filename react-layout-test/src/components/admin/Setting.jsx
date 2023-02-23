@@ -1,7 +1,9 @@
+import React from "react";
+
 const Setting = () => {
     return (
         <div>
-            Setting
+            <h1>Setting</h1>
         </div>
     );
 }
