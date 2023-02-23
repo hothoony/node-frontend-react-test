@@ -1,6 +1,6 @@
 import useToken, { LOGIN_TOKEN } from "./useToken";
 
-export default function Logout() {
+export default function LogoutForm() {
 
     const {token, setToken} = useToken();
 

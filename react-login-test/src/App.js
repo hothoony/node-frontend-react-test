@@ -1,36 +1,49 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Login from './components/login/Login';
-import Logout from './components/login/Logout';
+import LoginForm from './components/login/LoginForm';
+import LogoutForm from './components/login/LogoutForm';
 import useToken from './components/login/useToken';
+import LoginAppHome from './components/views/LoginAppHome';
 import Dashboard from './components/views/Dashboard';
 import Preferences from './components/views/Preferences';
 
 function App() {
 
   const {token, setToken} = useToken();
+  console.log('token 체크', token);
 
   if (!token) {
-    return <Login setToken={setToken}/>
+    return (
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+      }}>
+        <LoginForm setToken={setToken}/>
+      </div>
+    );
   }
 
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+      <h1>login test app</h1>
       <BrowserRouter>
-        <Logout/>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/dashboard">Dashboard</Link></li>
-          <li><Link to="/preferences">Preferences</Link></li>
-        </ul>
+        <div>
+          <LogoutForm/>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/preferences">Preferences</Link></li>
+          </ul>
+        </div>
         <Switch>
-          <Route path="/dashboard">
-            <Dashboard/>
+          <Route exact path="/">
+            <LoginAppHome/>
           </Route>
-          <Route path="/preferences">
-            <Preferences/>
-          </Route>
+          <Route exact path="/login" component={LoginForm}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route exact path="/preferences" component={Preferences}/>
         </Switch>
       </BrowserRouter>
     </div>
