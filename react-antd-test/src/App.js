@@ -8,11 +8,12 @@ import ColSpanTest from './antd-comp-test/grid/ColSpanTest';
 import GridRowColTest from './antd-comp-test/grid/GridRowColTest';
 import RowHorizontalAlignTest from './antd-comp-test/grid/RowHorizontalAlignTest';
 import RowVerticalAlignTest from './antd-comp-test/grid/RowVerticalAlignTest';
-import LoginForm from './antd-comp-test/LoginForm';
+import LoginForm from './antd-comp-test/form/LoginForm';
 import ModalTest from './antd-comp-test/ModalTest';
 import ModalTest2 from './antd-comp-test/ModalTest2';
 import TableTest from './antd-comp-test/TableTest';
 import './App.css';
+import SignupForm from './antd-comp-test/form/SignupForm';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         antd test
         {/* <ButtonTest/> */}
         {/* <FormTest/> */}
-        <LoginForm/>
+        {/* <LoginForm/> */}
+        <SignupForm/>
         {/* <ModalTest/> */}
         {/* <ModalTest2/> */}
         {/* <TableTest/> */}
