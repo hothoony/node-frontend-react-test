@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MyComp01 = () => {
 
@@ -6,9 +6,11 @@ const MyComp01 = () => {
     const [ age, setAge ] = useState('');
     const [ gender, setGender ] = useState('');
 
+    const prevNameRef = useRef();
+
 
     useEffect(() => {
-        console.log('useEffect');
+        console.log('useEffect 렌더링될 때 마다');
     });
 
     useEffect(() => {
@@ -16,15 +18,16 @@ const MyComp01 = () => {
     }, []);
 
     useEffect(() => {
-        console.log('useEffect [name]');
+        console.log('useEffect [name_변경됨]');
+        prevNameRef.current = name;
     }, [name]);
 
     useEffect(() => {
-        console.log('useEffect [age]');
+        console.log('useEffect [age_변경됨]');
     }, [age]);
 
     useEffect(() => {
-        console.log('useEffect [name, age]');
+        console.log('useEffect [name_변경됨 or age_변경됨]');
         console.log('name', name);
         console.log('age', age);
     }, [name, age]);
@@ -45,9 +48,11 @@ const MyComp01 = () => {
 
     return (
         <div>
-            MyComp01
+            <h2>MyComp01</h2>
+            <div>prevName = {prevNameRef.current}</div>
             <div>name = {name}</div>
             <div>age = {age}</div>
+            <div>gender = {gender}</div>
             <div>
                 <input type="text" value={name} onChange={onChangeName} placeholder='name'/>
             </div>
