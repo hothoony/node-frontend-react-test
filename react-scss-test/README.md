@@ -1,6 +1,10 @@
-## scss 설치
+# SCSS 사용하기
+
+## node-sass 설치
 ```javascript
 $ npm install node-sass
-or
+
+// or
+
 $ yarn add node-sass
 ```
