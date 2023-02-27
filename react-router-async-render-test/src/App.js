@@ -1,5 +1,6 @@
 import './App.css';
-import TokenCheck from './components/TokenCheck';
+import Test01 from './components/test01/Test01';
+import Test02 from './components/test02/Test02';
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
       <header className="App-header">
         
         react router async render
-        <TokenCheck/>
+        {/* <Test01/> */}
+        <Test02/>
 
       </header>
     </div>

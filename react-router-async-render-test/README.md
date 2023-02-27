@@ -1,5 +1,11 @@
-## async 로 로딩하고 결과에 따라 다르게 렌더링하기
+# async 로 로딩하고 결과에 따라 다르게 렌더링하기
 
+## 설치
+```javascript
+$ yarn add react-router-dom@5
+```
+
+## 코딩
 - 상태를 저장할 state 를 선언하고
 ```javascript
 const [ tokenState, setTokenState ] = useState(0);

@@ -38,10 +38,7 @@ const TokenCheck = () => {
 
     return (
         <>
-            <div>
-                TokenCheck
-            </div>
-            {(tokenState === 0) && <div>token loading and check</div>}
+            {(tokenState === 0) && <div>token loading...</div>}
             {(tokenState === 1) && <div>valid token</div>}
             {(tokenState === 2) && <div>invalid token</div>}
         </>
