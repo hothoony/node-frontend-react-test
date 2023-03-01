@@ -31,16 +31,17 @@ const SignupForm = () => {
 
     const validateNickname = () => {
         console.log('nickname', nickname);
-        if (true) {
-            Promise.reject(new Error('닉네임은 필수입니다'));
+        const validateFail = true;
+        if (validateFail) {
+            return Promise.reject(new Error('닉네임은 필수입니다 !!'));
         }
-        return Promise.resolve();
+        // return Promise.resolve();
     }
 
     return (
         <StyledForm>
             <Space direction="vertical" style={{width: '100%'}}>
-                <h3>회원 가입</h3>
+                <h2>SignupForm</h2>
                 <Form onFinish={onsubmitForm} form={form}
                     labelCol={{span: 7}}
                     labelAlign="right"
@@ -49,20 +50,76 @@ const SignupForm = () => {
                 >
                     <Space direction="vertical" style={{width: '400px'}}>
                         <Form.Item
-                            label="readonly value"
+                            label="로그인 ID"
                             name="username"
                             hasFeedback
                             rules={[{
-                                required: true,
-                                message: '필수 입력 항목입니다',
+                                // required: true,
+                                // message: '필수 입력 항목입니다',
                             }]}
                             style={{marginBottom: 0}}
                         >
                             <Input
-                                placeholder="사용자 이름"
+                                placeholder="readonly value"
                                 value={username}
                                 bordered={false}
                                 readOnly={true}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label="First Name"
+                            name="firstName"
+                            // hasFeedback
+                            rules={[
+                                {
+                                    required: true,
+                                    validator: (_, value) => {
+                                        console.log('validator');
+                                        console.log('_', _);
+                                        console.log('value', value);
+                                        if (isBlank(value)) {
+                                            return Promise.reject('firstName is required');
+                                        }
+                                        return Promise.resolve();
+                                    }
+                                },
+                            ]}
+                            style={{marginBottom: 0}}
+                        >
+                            <Input
+                                placeholder="first 이름"
+                                value={username}
+                                // onChange={onChangeUsername}
+                                // onBlur={onBlurUsername}
+                                // allowClar
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label="Last Name"
+                            name="lastName"
+                            // hasFeedback
+                            rules={[
+                                {
+                                    message: 'lastName 은 필수입니다.',
+                                    validator: (_, value) => {
+                                        console.log('validator');
+                                        console.log('_', _);
+                                        console.log('value', value);
+                                        if (isBlank(value)) {
+                                            return Promise.reject('lastName is required');
+                                        }
+                                        return Promise.resolve();
+                                    },
+                                },
+                            ]}
+                            style={{marginBottom: 0}}
+                        >
+                            <Input
+                                placeholder="first 이름"
+                                value={username}
+                                // onChange={onChangeUsername}
+                                // onBlur={onBlurUsername}
+                                // allowClar
                             />
                         </Form.Item>
                         <Form.Item
@@ -71,9 +128,9 @@ const SignupForm = () => {
                             // hasFeedback
                             rules={[
                                 {
-                                    // message: 'custom validator 메시지입니다',
+                                    required: true,
                                     message: (
-                                        <div style={{textAlign: 'left'}}>custom validator 메시지입니다</div>
+                                        <div style={{textAlign: 'left'}}>Username 을 입력하세요</div>
                                     ),
                                     validator: (_, value) => {
                                         console.log('validator');
@@ -83,7 +140,7 @@ const SignupForm = () => {
                                             return Promise.reject('validator message here');
                                         }
                                         return Promise.resolve();
-                                    }
+                                    },
                                 },
                             ]}
                             style={{marginBottom: 0}}
@@ -102,8 +159,7 @@ const SignupForm = () => {
                             // hasFeedback
                             rules={[
                                 { 
-                                    required: true,
-                                    validator: validateNickname 
+                                    validator: validateNickname,
                                 },
                             ]}
                             style={{marginBottom: 0}}
