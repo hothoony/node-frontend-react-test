@@ -1,8 +1,22 @@
 import { useForm } from "react-hook-form";
 
 const styles = {
+    formLabel: {
+        display: 'inline-block',
+        width: '150px',
+        textAlign: 'right',
+        paddingRight: '10px',
+        fontSize: '20px',
+    },
     error: {
         color: 'red',
+        margin: '0',
+        fontSize: '20px',
+        marginLeft: '200px',
+        textAlign: 'left',
+    },
+    submitBtn: {
+        marginLeft: '75px',
     },
 };
 
@@ -28,7 +42,7 @@ const SignupForm = () => {
                 <h3>SignupForm</h3>
                 
                 <div>
-                    <label htmlFor="firstName">First Name</label>
+                    <label style={styles.formLabel} htmlFor="firstName">First Name</label>
                     <input {...register('firstName', {
                             required: true,
                             validate: ((value, formValues) => isBlank(value)),
@@ -39,7 +53,7 @@ const SignupForm = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="lastName">Last Name</label>
+                    <label style={styles.formLabel} htmlFor="lastName">Last Name</label>
                     <input {...register('lastName', {
                             validate: (value => isBlank(value)),
                         })}
@@ -49,7 +63,7 @@ const SignupForm = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label style={styles.formLabel} htmlFor="email">Email</label>
                     <input {...register('email', {
                             required: true,
                         })}
@@ -58,7 +72,7 @@ const SignupForm = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="age">Age</label>
+                    <label style={styles.formLabel} htmlFor="age">Age</label>
                     <input {...register('age', {
                             pattern: /\d+/,
                         })}
@@ -66,7 +80,7 @@ const SignupForm = () => {
                     {errors.age && <p style={styles.error}>age is number only</p>}
                 </div>
 
-                <input type="submit" value="Sign-up" />
+                <input type="submit" value="Sign-up" style={styles.submitBtn} />
 
             </form>
         </>
