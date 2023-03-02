@@ -27,16 +27,16 @@ function App() {
         {/* <FormTest/> */}
         {/* <LoginForm/> */}
         {/* <SignupForm/> */}
-        {/* <ModalTest/>
-        <ModalTest2/> */}
-        <CustomModalTest/>
-        <CustomModalTest2/>
+        {/* <ModalTest/> */}
+        {/* <ModalTest2/> */}
+        {/* <CustomModalTest/> */}
+        {/* <CustomModalTest2/> */}
         {/* <TableTest/> */}
         {/* <DividerTest/> */}
         {/* <GridRowColTest/> */}
         {/* <ColSpanTest/> */}
-        {/* <RowHorizontalAlignTest/> */}
-        {/* <RowVerticalAlignTest/> */}
+        <RowHorizontalAlignTest/>
+        <RowVerticalAlignTest/>
         {/* <CardTest/> */}
         {/* <MultipleCardInRow/> */}
         {/* <CardGridTest/> */}
