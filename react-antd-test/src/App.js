@@ -1,19 +1,19 @@
-import ButtonTest from './antd-comp-test/ButtonTest';
-import CardGridTest from './antd-comp-test/card/CardGridTest';
-import CardTest from './antd-comp-test/card/CardTest';
-import MultipleCardInRow from './antd-comp-test/card/MultipleCardInRow';
-import DividerTest from './antd-comp-test/DividerTest';
-import FormTest from './antd-comp-test/form/FormTest';
-import ColSpanTest from './antd-comp-test/grid/ColSpanTest';
-import GridRowColTest from './antd-comp-test/grid/GridRowColTest';
-import RowHorizontalAlignTest from './antd-comp-test/grid/RowHorizontalAlignTest';
-import RowVerticalAlignTest from './antd-comp-test/grid/RowVerticalAlignTest';
-import LoginForm from './antd-comp-test/form/LoginForm';
-import ModalTest from './antd-comp-test/ModalTest';
-import ModalTest2 from './antd-comp-test/ModalTest2';
-import TableTest from './antd-comp-test/TableTest';
+import ButtonTest from './components/ButtonTest';
+import CardGridTest from './components/card/CardGridTest';
+import CardTest from './components/card/CardTest';
+import MultipleCardInRow from './components/card/MultipleCardInRow';
+import DividerTest from './components/DividerTest';
+import FormTest from './components/form/FormTest';
+import ColSpanTest from './components/grid/ColSpanTest';
+import GridRowColTest from './components/grid/GridRowColTest';
+import RowHorizontalAlignTest from './components/grid/RowHorizontalAlignTest';
+import RowVerticalAlignTest from './components/grid/RowVerticalAlignTest';
+import LoginForm from './components/form/LoginForm';
+import TableTest from './components/TableTest';
+import SignupForm from './components/form/SignupForm';
+import ModalTest from './components/modal/ModalTest';
+import ModalTest2 from './components/modal/ModalTest2';
 import './App.css';
-import SignupForm from './antd-comp-test/form/SignupForm';
 
 function App() {
   return (
@@ -24,9 +24,9 @@ function App() {
         {/* <ButtonTest/> */}
         {/* <FormTest/> */}
         {/* <LoginForm/> */}
-        <SignupForm/>
-        {/* <ModalTest/> */}
-        {/* <ModalTest2/> */}
+        {/* <SignupForm/> */}
+        <ModalTest/>
+        <ModalTest2/>
         {/* <TableTest/> */}
         {/* <DividerTest/> */}
         {/* <GridRowColTest/> */}
