@@ -14,6 +14,8 @@ import SignupForm from './components/form/SignupForm';
 import ModalTest from './components/modal/ModalTest';
 import ModalTest2 from './components/modal/ModalTest2';
 import './App.css';
+import CustomModalTest from './components/modal/custom/CustomModalTest';
+import CustomModalTest2 from './components/modal/custom/CustomModalTest2';
 
 function App() {
   return (
@@ -25,8 +27,10 @@ function App() {
         {/* <FormTest/> */}
         {/* <LoginForm/> */}
         {/* <SignupForm/> */}
-        <ModalTest/>
-        <ModalTest2/>
+        {/* <ModalTest/>
+        <ModalTest2/> */}
+        <CustomModalTest/>
+        <CustomModalTest2/>
         {/* <TableTest/> */}
         {/* <DividerTest/> */}
         {/* <GridRowColTest/> */}
