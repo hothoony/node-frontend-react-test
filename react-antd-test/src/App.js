@@ -16,6 +16,7 @@ import ModalTest2 from './components/modal/ModalTest2';
 import './App.css';
 import CustomModalTest from './components/modal/custom/CustomModalTest';
 import CustomModalTest2 from './components/modal/custom/CustomModalTest2';
+import LayoutTest01 from './components/layout/LayoutTest01';
 
 function App() {
   return (
@@ -35,11 +36,12 @@ function App() {
         {/* <DividerTest/> */}
         {/* <GridRowColTest/> */}
         {/* <ColSpanTest/> */}
-        <RowHorizontalAlignTest/>
-        <RowVerticalAlignTest/>
+        {/* <RowHorizontalAlignTest/> */}
+        {/* <RowVerticalAlignTest/> */}
         {/* <CardTest/> */}
         {/* <MultipleCardInRow/> */}
         {/* <CardGridTest/> */}
+        <LayoutTest01/>
 
       </header>
     </div>
