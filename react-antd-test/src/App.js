@@ -17,6 +17,7 @@ import './App.css';
 import CustomModalTest from './components/modal/custom/CustomModalTest';
 import CustomModalTest2 from './components/modal/custom/CustomModalTest2';
 import LayoutTest01 from './components/layout/LayoutTest01';
+import SelectTest from './components/form/SelectTest';
 
 function App() {
   return (
@@ -41,7 +42,9 @@ function App() {
         {/* <CardTest/> */}
         {/* <MultipleCardInRow/> */}
         {/* <CardGridTest/> */}
-        <LayoutTest01/>
+        {/* <LayoutTest01/> */}
+        {/* <LayoutTest01/> */}
+        <SelectTest/>
 
       </header>
     </div>

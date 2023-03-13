@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Form, Input, Space } from "antd";
 import { useState } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 
-const StyledForm = styled.div`
-    max-width: 100%;
-`;
+// const StyledForm = styled.div`
+//     max-width: 100%;
+// `;
 
 const isBlank = (value) => {
     return value === null || value === undefined || String(value).trim() === '';
@@ -39,7 +39,7 @@ const SignupForm = () => {
     }
 
     return (
-        <StyledForm>
+        <>
             <Space direction="vertical" style={{width: '100%'}}>
                 <h2>SignupForm</h2>
                 <Form onFinish={onsubmitForm} form={form}
@@ -184,7 +184,7 @@ const SignupForm = () => {
                     </Space>
                 </Form>
             </Space>
-        </StyledForm>
+        </>
     );
 }
 
