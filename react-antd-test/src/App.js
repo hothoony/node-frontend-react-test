@@ -18,6 +18,7 @@ import CustomModalTest from './components/modal/custom/CustomModalTest';
 import CustomModalTest2 from './components/modal/custom/CustomModalTest2';
 import LayoutTest01 from './components/layout/LayoutTest01';
 import SelectTest from './components/form/SelectTest';
+import SearchForm from './components/form/SearchForm';
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
         {/* <CardGridTest/> */}
         {/* <LayoutTest01/> */}
         {/* <LayoutTest01/> */}
-        <SelectTest/>
+        {/* <SelectTest/> */}
+        <SearchForm/>
 
       </header>
     </div>
