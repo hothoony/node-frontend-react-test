@@ -43,10 +43,9 @@ function App() {
         {/* <CardTest/> */}
         {/* <MultipleCardInRow/> */}
         {/* <CardGridTest/> */}
-        {/* <LayoutTest01/> */}
-        {/* <LayoutTest01/> */}
+        <LayoutTest01/>
         {/* <SelectTest/> */}
-        <SearchForm/>
+        {/* <SearchForm/> */}
 
       </header>
     </div>
