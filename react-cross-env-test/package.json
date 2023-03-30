@@ -14,8 +14,8 @@
   },
   "scripts": {
 
-    "env-dev": "cross-env REACT_APP_BUILD_PROFILE=development react-scripts start",
-    "env-prd": "cross-env REACT_APP_BUILD_PROFILE=production react-scripts start",
+    "env-dev": "cross-env REACT_APP_BUILD_ENV=development react-scripts start",
+    "env-prd": "cross-env REACT_APP_BUILD_ENV=production react-scripts start",
 
     "start": "react-scripts start",
     "build": "react-scripts build",
