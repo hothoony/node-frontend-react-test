@@ -15,10 +15,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+
     "start-dev": "cross-env REACT_APP_BUILD_ENV=development GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 start",
     "start-prd": "cross-env REACT_APP_BUILD_ENV=production  GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 start",
+    
     "build-dev": "cross-env REACT_APP_BUILD_ENV=development GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 build",
     "build-prd": "cross-env REACT_APP_BUILD_ENV=production  GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 build",
+
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
