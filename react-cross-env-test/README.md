@@ -1,3 +1,10 @@
+라이브러리 설치
+```shell
+$ npm install cross-env
+$ npm install react-app-rewired
+$ npm install serve
+```
+
 `.env` 파일 내용
 ```
 REACT_APP_API_HOST_DEV = http://dev-api.myhost.com

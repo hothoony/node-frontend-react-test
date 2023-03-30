@@ -8,15 +8,17 @@
     "@testing-library/user-event": "^13.5.0",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-
-    "env-dev": "cross-env REACT_APP_BUILD_ENV=development react-scripts start",
-    "env-prd": "cross-env REACT_APP_BUILD_ENV=production react-scripts start",
-
+    "start-dev": "cross-env REACT_APP_BUILD_ENV=development GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 start",
+    "start-prd": "cross-env REACT_APP_BUILD_ENV=production  GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 start",
+    "build-dev": "cross-env REACT_APP_BUILD_ENV=development GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 build",
+    "build-prd": "cross-env REACT_APP_BUILD_ENV=production  GENERATE_SOURCEMAP=false react-app-rewired --max-old-space-size=4096 build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
