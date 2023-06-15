@@ -5,6 +5,7 @@ import MyRadio_defaultValue from './components/form/radio/MyRadio_defaultValue';
 import MyCheckbox from './components/form/checkbox/MyCheckbox';
 import MyCheckbox_defaultValue from './components/form/checkbox/MyCheckbox_defaultValue';
 import MySelect from './components/form/select/MySelect';
+import MySelect_defaultValue from './components/form/select/MySelect_defaultValue';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         {/* <MyRadio_defaultValue/> */}
         {/* <MyCheckbox/> */}
         {/* <MyCheckbox_defaultValue/> */}
-        <MySelect/>
+        {/* <MySelect/> */}
+        <MySelect_defaultValue/>
 
       </header>
     </div>
