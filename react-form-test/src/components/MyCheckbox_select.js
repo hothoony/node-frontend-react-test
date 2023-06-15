@@ -16,6 +16,20 @@ function MyCheckbox_select() {
         console.log('searchForm', checkedValues);
     }
 
+    const onChangeCheckbox = (e) => {
+        console.log('onChangeCheckbox');
+        console.log(e.target.value, e.target.checked);
+
+        if (e.target.checked) {
+            setCheckedValues((prev) => ([
+                ...prev,
+                e.target.value,
+            ]));
+        } else {
+            setCheckedValues(checkedValues.filter(item => item !== e.target.value));
+        }
+    }
+
     return (
         <div>
             <h2>
@@ -30,12 +44,7 @@ function MyCheckbox_select() {
                                 type="checkbox"
                                 name="snsLoginType"
                                 value={item.value}
-                                onChange={e => {
-                                    setCheckedValues((prev) => ([
-                                        ...prev,
-                                        e.target.value,
-                                    ]))
-                                }}
+                                onChange={onChangeCheckbox}
                             />
                             <span>{item.label}</span>
                         </label>
