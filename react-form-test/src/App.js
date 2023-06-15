@@ -6,6 +6,7 @@ import MyCheckbox from './components/form/checkbox/MyCheckbox';
 import MyCheckbox_defaultValue from './components/form/checkbox/MyCheckbox_defaultValue';
 import MySelect from './components/form/select/MySelect';
 import MySelect_defaultValue from './components/form/select/MySelect_defaultValue';
+import ListPgae_searchBox from './components/ListPage_searchBox';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         {/* <MyCheckbox/> */}
         {/* <MyCheckbox_defaultValue/> */}
         {/* <MySelect/> */}
-        <MySelect_defaultValue/>
+        {/* <MySelect_defaultValue/> */}
+        <ListPgae_searchBox/>
 
       </header>
     </div>
