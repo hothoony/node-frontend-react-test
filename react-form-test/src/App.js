@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MyRadio_select from './components/MyRadio_select';
 import MyRadio_defaultValue from './components/MyRadio_defaultValue';
+import MyCheckbox_select from './components/MyCheckbox_select';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <div>react form test</div>
         
         {/* <MyRadio_select/> */}
-        <MyRadio_defaultValue/>
+        {/* <MyRadio_defaultValue/> */}
+        <MyCheckbox_select/>
 
       </header>
     </div>
