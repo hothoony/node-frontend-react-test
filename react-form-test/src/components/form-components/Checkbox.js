@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Checkbox({options, name, defaultValue, onChange}) {
+function Checkbox({options, onChange, defaultValue}) {
 
     const [values, setValues] = useState([]);
 
@@ -27,21 +27,16 @@ function Checkbox({options, name, defaultValue, onChange}) {
 
     return (
         <div>
-            <div>
-                Checkbox
-            </div>
-            <div>
-                {options && options.map((item, index) => (
-                    <label>
-                        <input type="checkbox"
-                            value={item.value}
-                            // checked={values && values.includes(item.value)}
-                            onChange={onCompChange}
-                        />
-                        {item.label}
-                    </label>
-                ))}
-            </div>
+            {options && options.map((item, index) => (
+                <label>
+                    <input type="checkbox"
+                        value={item.value}
+                        // checked={values && values.includes(item.value)}
+                        onChange={onCompChange}
+                    />
+                    {item.label}
+                </label>
+            ))}
         </div>
     );
 }
