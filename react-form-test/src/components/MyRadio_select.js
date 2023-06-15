@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MyRadio() {
+function MyRadio_select() {
 
     const dataList = [
         {label: '애플', value: 'apple'},
@@ -18,7 +18,9 @@ function MyRadio() {
 
     return (
         <div>
-            <h2>MyRadio</h2>
+            <h2>
+                MyRadio_select
+            </h2>
 
             <div>
                 {dataList && dataList.map((item, idx) => {
@@ -44,9 +46,8 @@ function MyRadio() {
             <div>
                 <button onClick={() => doSearch()}>검색</button>
             </div>
-
         </div>
     );
 }
 
-export default MyRadio;
+export default MyRadio_select;

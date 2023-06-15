@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import MyRadio from './components/MyRadio';
+import MyRadio_select from './components/MyRadio_select';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <div>react form test</div>
-        <MyRadio/>
+        <MyRadio_select/>
       </header>
     </div>
   );
