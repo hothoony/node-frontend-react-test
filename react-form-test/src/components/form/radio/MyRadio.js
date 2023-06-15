@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MyRadio_select() {
+function MyRadio() {
 
     const dataList = [
         {label: '애플', value: 'apple'},
@@ -19,7 +19,7 @@ function MyRadio_select() {
     return (
         <div>
             <h2>
-                MyRadio_select
+                MyRadio
             </h2>
 
             <div>
@@ -50,4 +50,4 @@ function MyRadio_select() {
     );
 }
 
-export default MyRadio_select;
+export default MyRadio;

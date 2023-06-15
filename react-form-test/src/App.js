@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import MyRadio_select from './components/MyRadio_select';
-import MyRadio_defaultValue from './components/MyRadio_defaultValue';
-import MyCheckbox_select from './components/MyCheckbox_select';
-import MyCheckbox_defaultValue from './components/MyCheckbox_defaultValue';
+import MyRadio from './components/form/radio/MyRadio';
+import MyRadio_defaultValue from './components/form/radio/MyRadio_defaultValue';
+import MyCheckbox from './components/form/checkbox/MyCheckbox';
+import MyCheckbox_defaultValue from './components/form/checkbox/MyCheckbox_defaultValue';
+import MySelect from './components/form/select/MySelect';
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
         
         <div>react form test</div>
         
-        {/* <MyRadio_select/> */}
+        {/* <MyRadio/> */}
         {/* <MyRadio_defaultValue/> */}
-        {/* <MyCheckbox_select/> */}
-        <MyCheckbox_defaultValue/>
+        {/* <MyCheckbox/> */}
+        {/* <MyCheckbox_defaultValue/> */}
+        <MySelect/>
 
       </header>
     </div>

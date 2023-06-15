@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MyCheckbox_select() {
+function MyCheckbox() {
 
     const dataList = [
         {label: '애플', value: 'apple'},
@@ -33,7 +33,7 @@ function MyCheckbox_select() {
     return (
         <div>
             <h2>
-                MyCheckbox_select
+                MyCheckbox
             </h2>
 
             <div>
@@ -59,4 +59,4 @@ function MyCheckbox_select() {
     );
 }
 
-export default MyCheckbox_select;
+export default MyCheckbox;
