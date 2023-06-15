@@ -26,7 +26,7 @@ function ListPgae_searchBox() {
             <div>
                 <p>searchBox</p>
 
-                <Checkbox options={dataList} name='snsLognType' onChange={(e) => {
+                <Checkbox options={dataList} name='snsLognType' value={['google', 'naver']} onChange={(e) => {
                     console.log('checkbox change', e);
                     setSearchParams(prev => ({
                         ...prev,
