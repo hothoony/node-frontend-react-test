@@ -49,7 +49,7 @@ const EnvView = () => {
     "env-test-prd": "env-cmd -f .env.production react-scripts start",
     
     "start":   "env-cmd -f .env.development react-scripts start",
-    "develop": "env-cmd -f .env.production react-scripts build",
+    "develop": "env-cmd -f .env.development react-scripts build",
     "build":   "env-cmd -f .env.production react-scripts build",
     
     ...

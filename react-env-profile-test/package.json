@@ -16,6 +16,8 @@
   },
   "scripts": {
     
+    "env-test-myprofile01": "env-cmd -f .env.myprofile01 react-scripts start",
+    "env-test-myprofile02": "env-cmd -f .env.myprofile02 react-scripts start",
     "env-test-dev": "env-cmd -f .env.development react-scripts start",
     "env-test-prd": "env-cmd -f .env.production react-scripts start",
     
