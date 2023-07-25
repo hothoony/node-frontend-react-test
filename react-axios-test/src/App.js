@@ -1,4 +1,5 @@
 import './App.css';
+import AudioFile from './components/AudioFile';
 import AxiosApi from './components/AxiosApi';
 import FileDownload from './components/FileDownload';
 
@@ -10,6 +11,7 @@ function App() {
         
         <AxiosApi/>
         <FileDownload/>
+        <AudioFile/>
 
       </header>
     </div>
