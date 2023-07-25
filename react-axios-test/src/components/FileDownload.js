@@ -8,7 +8,14 @@ const FileDownload = () => {
         const url = 'http://localhost:8080/api/br/public/v1/test/wav';
         const data = {};
 
-        axios.post(url, data)
+        axios({
+            method: 'post',
+            url: url,
+            // responseType: 'stream',
+            responseType: 'blob',
+            data: data,
+        })
+        // axios.post(url)
         .then(response => {
 
             console.log('response', response);
@@ -27,13 +34,17 @@ const FileDownload = () => {
 
     const downloadFile = (response) => {
 
+        console.log('## downloadFile');
+
         const blob = new Blob([response.data]);
         console.log('blob', blob);
 
         const fileObjectUrl = window.URL.createObjectURL(blob);
 
-        const contentType = response.headers['Content-Type'];
+        const contentType = response.headers['content-type'];
+        const contentDisposition = response.headers['content-disposition'];
         console.log('contentType', contentType);
+        console.log('contentDisposition', contentDisposition);
 
         const link = document.createElement('a');
         link.href = fileObjectUrl;
