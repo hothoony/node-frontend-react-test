@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ReactAudioPlayer from "react-audio-player";
 
 const AudioFile = () => {
 
     const [audio, setAudio] = useState(new Audio());
-    const [play, setPlay] = useState(false);
     const [source, setSource] = useState();
+    const [play, setPlay] = useState(false);
 
     useEffect(() => {
         console.log('useEffect -------------------');
@@ -52,22 +53,21 @@ const AudioFile = () => {
         });
     }
 
-    const onAudioStart = () => {
-        // audio.play();
-        audio.play(0);
-    }
-
-    const onAudioStop = () => {
-        audio.pause();
-    }
-
     return (
         <div>
             <h2>AudioFile</h2>
 
-            <button onClick={onFetchAudio}>fetchAudio</button>
-            <button onClick={onAudioStart}>start</button>
-            <button onClick={onAudioStop}>stop</button>
+            <div>
+                <button onClick={onFetchAudio}>fetchAudio</button>
+            </div>
+
+            <div>
+                <ReactAudioPlayer
+                    src={source}
+                    autoplay
+                    controls
+                />
+            </div>
 
         </div>
     );
