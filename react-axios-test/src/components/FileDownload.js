@@ -22,6 +22,7 @@ const FileDownload = () => {
     }
 
     const downloadFile = (response) => {
+        
         const blob = new Blob([response.data]);
         console.log('blob', blob);
 
