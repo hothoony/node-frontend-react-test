@@ -9,24 +9,31 @@ const FileDownload = () => {
         const data = {};
 
         axios.post(url, data)
-        .then(res => {
-            console.log('res', res);
-            console.log('res.status', res.status);
-            console.log('res.data', res.data);
+        .then(response => {
+
+            console.log('response', response);
+            console.log('response.status', response.status);
+            console.log('response.headers[content-type]', response.headers['content-type']);
+            console.log('response.headers[content-length]', response.headers['content-length']);
+            console.log('response.headers[content-disposition]', response.headers['content-disposition']);
+            console.log('response.data', response.data);
             
-            downloadFile(res);
+            downloadFile(response);
         })
-        .catch(err => {
-            console.log('err', err);
-        })
+        .catch(error => {
+            console.log('error', error);
+        });
     }
 
     const downloadFile = (response) => {
-        
+
         const blob = new Blob([response.data]);
         console.log('blob', blob);
 
         const fileObjectUrl = window.URL.createObjectURL(blob);
+
+        const contentType = response.headers['Content-Type'];
+        console.log('contentType', contentType);
 
         const link = document.createElement('a');
         link.href = fileObjectUrl;
