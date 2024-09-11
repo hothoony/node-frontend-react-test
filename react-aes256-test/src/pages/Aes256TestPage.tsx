@@ -4,7 +4,8 @@ import { aes_encrypt, aes_decrypt } from "../utils/aes256";
 export default function Aes256TestPage() {
 
     useEffect(() => {
-        console.log('Aes256TestPage useEffect');
+        console.log('');
+        console.log('## Aes256TestPage useEffect');
 
         const plainText = 'Hello, World!';
         console.log('plainText =', plainText);
