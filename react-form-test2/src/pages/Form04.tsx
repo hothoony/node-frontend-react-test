@@ -1,9 +1,30 @@
+import useInput from "../components/useInput";
 
 export default function Form04() {
 
+    const {
+        value: emailValue,
+        handleChange: handleEmailChange,
+        hasError: hasEmailError,
+    } = useInput('', (value: string) => value.includes('@'));
+
+    const {
+        value: passwordValue,
+        handleChange: handlePasswordChange,
+        hasError: hasPasswordError,
+    } = useInput('', (value: string) => value.length >= 4);
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log('handleSubmit');
+        // console.log('handleSubmit');
+        // console.log('emailValue', emailValue);
+        // console.log('passwordValue', passwordValue);
+
+        const loginData = {
+            'email': emailValue,
+            'password': passwordValue,
+        };
+        console.log('loginData', loginData);
     }
     
     return (
@@ -18,7 +39,10 @@ export default function Form04() {
                         <input
                             type="email"
                             name="email"
+                            value={emailValue}
+                            onChange={handleEmailChange}
                         />
+                        {hasEmailError && 'invalid email'}
                     </label>
                 </div>
                 <div>
@@ -27,7 +51,10 @@ export default function Form04() {
                         <input
                             type="password"
                             name="password"
+                            value={passwordValue}
+                            onChange={handlePasswordChange}
                         />
+                        {hasPasswordError && 'invalid password'}
                     </label>
                 </div>
                 <div>
