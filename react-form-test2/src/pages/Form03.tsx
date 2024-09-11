@@ -4,6 +4,15 @@ export default function Form03() {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         console.log('handleSubmit');
+
+        if (event.target instanceof HTMLFormElement) {
+            console.log('-->> event.target is instance of HTMLFormElement');
+        }
+
+        const formData = new FormData(event.target as HTMLFormElement);
+        console.log('formData', formData);
+        console.log('email', formData.get('email'));
+        console.log('password', formData.get('password'));
     }
     
     return (
