@@ -3,7 +3,7 @@ export default function FormTemplate() {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log('handleSubmit');
+        // console.log('handleSubmit');
     }
 
     return (

@@ -6,12 +6,14 @@ import Form02 from './pages/Form02';
 import Form03 from './pages/Form03';
 import Form04 from './pages/Form04';
 import Form05 from './pages/Form05';
+import FormTemplate from './pages/FormTemplate';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Menu />} />
+        <Route path='/formTemplate' element={<FormTemplate />} />
         <Route path='/form01' element={<Form01 />} />
         <Route path='/form02' element={<Form02 />} />
         <Route path='/form03' element={<Form03 />} />
