@@ -1,7 +1,7 @@
 import CryptoJS from 'crypto-js';
 
 const secretKey = 'nwjnt3gm4tjQXGd9w0hngSDBXXsAT9U8GcBObVA8NsY=';
-const iv = 'n9r616W2sWxwtj3t';
+const iv = 'n9r616W2sWxwtj3t123456';
 
 // AES-256 암호화 함수
 export function aes_encrypt(data: string): string {
