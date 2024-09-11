@@ -1,20 +1,15 @@
 
 export default function FormTemplate() {
 
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        console.log('handleSubmit');
-    }
-
     return (
         <div>
             FormTemplate
 
-            <form onSubmit={handleSubmit}>
+            <form>
                 <h2>Login</h2>
                 <div>
                     <label>
-                        <span>email</span>
+                        <span className="formLabel">email</span>
                         <input
                             type="email"
                             name="email"
@@ -23,7 +18,7 @@ export default function FormTemplate() {
                 </div>
                 <div>
                     <label>
-                        <span>password</span>
+                        <span className="formLabel">password</span>
                         <input
                             type="password"
                             name="password"
@@ -31,6 +26,7 @@ export default function FormTemplate() {
                     </label>
                 </div>
                 <div>
+                    <span className="formLabel"></span>
                     <button type="submit">submit</button>
                 </div>
             </form>
