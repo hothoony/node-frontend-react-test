@@ -10,10 +10,10 @@ export default function Menu() {
                 <h2>form 을 사용하는 여러가지 방법</h2>
                 <ul>
                     <li>
-                        <Link to={'/form01'}>1. state 와 handler 를 사용</Link>
+                        <Link to={'/form01'}>1. useState 와 handler 를 사용</Link>
                     </li>
                     <li>
-                        <Link to={'/form02'}>2. Ref 를 사용</Link>
+                        <Link to={'/form02'}>2. useRef 를 사용</Link>
                     </li>
                     <li>
                         <Link to={'/form03'}>3. FormData 와 브라우저 API 사용</Link>

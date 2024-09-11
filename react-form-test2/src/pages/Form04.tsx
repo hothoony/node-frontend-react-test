@@ -1,4 +1,4 @@
-import useInput from "../components/useInput";
+import useInput from "../customHook/useInput";
 
 export default function Form04() {
 
