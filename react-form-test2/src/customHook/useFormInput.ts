@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useInput(defaultVaue: string, validationFunc: Function) {
+export default function useFormInput(defaultVaue: string, validationFunc: Function) {
     
     const [value, setValue] = useState(defaultVaue);
     const valueIsValid = validationFunc(value);

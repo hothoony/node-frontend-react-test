@@ -1,4 +1,4 @@
-import useInput from "../customHook/useInput";
+import useFormInput from "../customHook/useFormInput";
 
 export default function Form04() {
 
@@ -6,13 +6,13 @@ export default function Form04() {
         value: emailValue,
         handleChange: handleEmailChange,
         hasError: hasEmailError,
-    } = useInput('', (value: string) => value.includes('@'));
+    } = useFormInput('', (value: string) => value.includes('@'));
 
     const {
         value: passwordValue,
         handleChange: handlePasswordChange,
         hasError: hasPasswordError,
-    } = useInput('', (value: string) => value.length >= 4);
+    } = useFormInput('', (value: string) => value.length >= 4);
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();

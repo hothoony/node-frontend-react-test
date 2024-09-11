@@ -15,6 +15,8 @@ npx create-react-app react-form-test2 --template typescript
    ```
 4. custom hook 을 사용
 5. React Forms Library 를 사용
+   - react hook form
+   - formik
 
 ## react type 확인
 - global.d.ts 파일에 정의되어 있다
