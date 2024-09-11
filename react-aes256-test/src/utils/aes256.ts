@@ -6,11 +6,11 @@ import CryptoJS from 'crypto-js';
 // secretKey 길이는 256비트(32바이트) 로 설정
 const secretKey = 'your-secret-key';
 
-export const aes_encrypt = (text: string): string => {
-  return CryptoJS.AES.encrypt(text, secretKey).toString();
+export const aes_encrypt = (plainText: string): string => {
+  return CryptoJS.AES.encrypt(plainText, secretKey).toString();
 };
 
-export const aes_decrypt = (ciphertext: string): string => {
-  const bytes = CryptoJS.AES.decrypt(ciphertext, secretKey);
+export const aes_decrypt = (encrypted: string): string => {
+  const bytes = CryptoJS.AES.decrypt(encrypted, secretKey);
   return bytes.toString(CryptoJS.enc.Utf8);
 };
