@@ -9,7 +9,7 @@ export default function Form01() {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log('handleSubmit');
+        // console.log('handleSubmit');
         console.log('loginData', loginData);
     }
 
