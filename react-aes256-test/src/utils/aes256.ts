@@ -1,11 +1,5 @@
 import CryptoJS from 'crypto-js';
 
-// const secretKey = CryptoJS.enc.Utf8.parse('your-256-bit-secret-key'); // 256비트(32바이트)
-// const iv = CryptoJS.enc.Utf8.parse('your-128-bit-iv'); // 128비트(16바이트)
-
-// const secretKey = CryptoJS.enc.Utf8.parse('nwjnt3gm4tjQXGd9w0hngSDBXXsAT9U8GcBObVA8NsY=');
-// const iv = CryptoJS.enc.Utf8.parse('n9r616W2sWxwtj3t');
-
 const secretKey = 'nwjnt3gm4tjQXGd9w0hngSDBXXsAT9U8GcBObVA8NsY=';
 const iv = 'n9r616W2sWxwtj3t';
 
