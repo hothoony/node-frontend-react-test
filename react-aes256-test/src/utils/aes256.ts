@@ -1,7 +1,7 @@
 import CryptoJS from 'crypto-js';
 
 const secretKey = 'nwjnt3gm4tjQXGd9w0hngSDBXXsAT9U8GcBObVA8NsY=';
-const iv = 'n9r616W2sWxwtj3t123456';
+const iv = 'ZSnm22ERRX7rbT4FtYwfdQ==';
 
 // export function aes_encrypt(data: string): string {
 //   const encrypted = CryptoJS.AES.encrypt(data, 
