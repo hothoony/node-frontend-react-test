@@ -3,16 +3,23 @@ export default function Form03() {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log('handleSubmit');
+        // console.log('handleSubmit');
 
-        if (event.target instanceof HTMLFormElement) {
-            console.log('-->> event.target is instance of HTMLFormElement');
+        if (!(event.target instanceof HTMLFormElement)) {
+            console.log('-->> event.target is NOT instance of HTMLFormElement');
+            return;
         }
 
         const formData = new FormData(event.target as HTMLFormElement);
-        console.log('formData', formData);
-        console.log('email', formData.get('email'));
-        console.log('password', formData.get('password'));
+        // console.log('formData', formData);
+        // console.log('email', formData.get('email'));
+        // console.log('password', formData.get('password'));
+
+        const loginData = {
+            'email': formData.get('email'),
+            'password': formData.get('password'),
+        };
+        console.log('loginData', loginData);
     }
     
     return (
