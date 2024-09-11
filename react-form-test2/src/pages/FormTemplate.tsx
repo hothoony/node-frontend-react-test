@@ -1,11 +1,16 @@
 
 export default function FormTemplate() {
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        console.log('handleSubmit');
+    }
+
     return (
         <div>
             FormTemplate
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 <div>
                     <label>
