@@ -16,7 +16,7 @@ export default function Aes256TestPage() {
         const decrypted = aes_decrypt(encrypted);
         console.log('decrypted =', decrypted);
 
-        console.log('decrypted2 =', aes_decrypt("ikQk+b0Nwc/g7/oaGnu2nA=="));
+        console.log('decrypted2 =', aes_decrypt("mFiqTEFaBE61Bydoz5sN9Q=="));
 
     }, []);
 
