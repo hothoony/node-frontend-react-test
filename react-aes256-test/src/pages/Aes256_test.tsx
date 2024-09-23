@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { aes_encrypt, aes_decrypt } from "../utils/aes256";
 
-export default function Aes256TestPage() {
+export default function Aes256_test() {
 
     useEffect(() => {
         console.log('');
