@@ -3,8 +3,6 @@ import { verifyLicenseKey } from "../utils/rsa-util-temp";
 
 function Home() {
 
-    const publicKeyBase64 = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7dW9e6FCyamfihjoRpprMaiqVrY5Um3GEqKimnDZyR5g9mq+hk1aI2LnwXxBSiQ0FUzSpdZlHNKJccLN8ds+7oirFebwPXfFvYqaP0wxB+MHmEiV1mwmFxNkFhdOJtiYYyCD98MQh1+TtJAXiOsedqM+CzN7wi5F1DeS019BrLrHZMSixpe+35Pc5CJAv1wd948zP1y4S/QHAVT/uziNQiqgjsB+YPqvn2ryLYsfGJ184JtuLdJH2i9JlywbAO1JBNPXjqJxTVzIjBSkRBIYdHS0UmyZRV7vZuRBw+0tEdqz1KsxTJOdxBdcyK5GMCEct71hz1mbjKA0JdghoJUqeQIDAQAB';
-
     useEffect(() => {
 
         console.log('Home loaded');
@@ -23,6 +21,9 @@ function Home() {
             // const licenseKey = '받은_라이센스_키';
             const licenseKey = 'T/SiQxO/2ZH77GWDx/paO6z4TreKfd4blmYUER4D+mqxCM3G0OE+/sov8MccNDbsr9UHHNFvJBIQOmcs/hgHWKL9Zz829605Zc6qdalszX4GTnYbVhG5s94X9gUK1UWtlxCmjw13DcN3Goq60bvDGZDR59KmYS50dBXPZ1JrZklWb0DxLrn8ZoDaU6Szcaoq41YtajlyBZMs9/K5o+m2rHl6f/P/t7YgWF0b6fbtVZ07G2QxNTO3zlvtyWqcFAo3toWZsq+DkC97/Cb/qV3q19PUAfhn9bJDvxjJFjKe98Hk+kTamuTbli3gkDNtkqdGfOuGFLoTBnXIJDf0fFnKjw==';
             console.log('licenseKey = ', licenseKey);
+            
+            const publicKeyBase64 = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7dW9e6FCyamfihjoRpprMaiqVrY5Um3GEqKimnDZyR5g9mq+hk1aI2LnwXxBSiQ0FUzSpdZlHNKJccLN8ds+7oirFebwPXfFvYqaP0wxB+MHmEiV1mwmFxNkFhdOJtiYYyCD98MQh1+TtJAXiOsedqM+CzN7wi5F1DeS019BrLrHZMSixpe+35Pc5CJAv1wd948zP1y4S/QHAVT/uziNQiqgjsB+YPqvn2ryLYsfGJ184JtuLdJH2i9JlywbAO1JBNPXjqJxTVzIjBSkRBIYdHS0UmyZRV7vZuRBw+0tEdqz1KsxTJOdxBdcyK5GMCEct71hz1mbjKA0JdghoJUqeQIDAQAB';
+            console.log('publicKeyBase64 = ', publicKeyBase64);
 
             const isValid = await verifyLicenseKey(
                 licenseData,
