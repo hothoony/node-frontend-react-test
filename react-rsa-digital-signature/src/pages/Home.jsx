@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { verifyLicenseKey } from "../utils/rsa-util-temp";
 
 function Home() {
+
+    const [validData, setValidData] = useState();
 
     useEffect(() => {
 
@@ -31,6 +33,7 @@ function Home() {
                 publicKeyBase64
             );
             console.log('Is License Key Valid?:', isValid);
+            setValidData(isValid ? 1 : 0);
 
         })();
 
@@ -43,6 +46,9 @@ function Home() {
             </p>
             <p>
                 RSA Signature Verify
+            </p>
+            <p>
+                validData = {validData}
             </p>
         </div>
     );
