@@ -373,5 +373,5 @@ history.push('/blogs');
 
 ## react + typescript 프로젝트 생성하기
 ```shell
-npx create-react-app my-app --typescript
+npx create-react-app react-ui-modal-test --template typescript
 ```
