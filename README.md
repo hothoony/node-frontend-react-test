@@ -370,11 +370,3 @@ import { useHistory } from "react-router-dom";
 const history = useHistory();
 history.push('/blogs');
 ```
-
-## react + typescript 프로젝트 생성하기
-```shell
-npx create-react-app my-app --template typescript
-yarn add -D tailwindcss postcss autoprefixer
-yarn install
-yarn run tailwindcss init -p
-```
