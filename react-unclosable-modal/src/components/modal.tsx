@@ -8,7 +8,7 @@ const Modal = ({ isOpen, duration, onClose, message }
       onClose: () => void, 
       message: string 
     }) => {
-        
+
     useEffect(() => {
         if (isOpen) {
             // 모달이 열리면 body 스크롤 및 상호작용 방지
@@ -17,14 +17,14 @@ const Modal = ({ isOpen, duration, onClose, message }
             // document.querySelector('.modal-overlay').style.pointerEvents = 'auto'; // 오버레이만 활성화
     
             const timer = setTimeout(() => {
-            onClose();
+                onClose();
             }, duration);
     
             return () => {
-            // 모달이 닫히면 원상 복구
-            clearTimeout(timer);
-            document.body.style.overflow = 'auto';
-            document.body.style.pointerEvents = 'auto';
+                // 모달이 닫히면 원상 복구
+                clearTimeout(timer);
+                document.body.style.overflow = 'auto';
+                document.body.style.pointerEvents = 'auto';
             };
         }
         }, [isOpen, duration, onClose]);
@@ -34,7 +34,7 @@ const Modal = ({ isOpen, duration, onClose, message }
         return (
         <div className="modal-overlay">
             <div className="modal-content">
-            <p>{message}</p>
+                <p>{message}</p>
             </div>
         </div>
         );

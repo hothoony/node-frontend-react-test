@@ -10,13 +10,13 @@
     align-items: center;
     z-index: 1000; /* 다른 요소 위에 표시 */
     pointer-events: auto; /* 오버레이는 클릭 가능 */
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     /* background-color: white; */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     pointer-events: auto; /* 모달 내용도 클릭 가능 */
-  }
+}
