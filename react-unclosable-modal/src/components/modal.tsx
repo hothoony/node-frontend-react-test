@@ -8,6 +8,7 @@ const Modal = ({ isOpen, duration, onClose, message }
       onClose: () => void, 
       message: string 
     }) => {
+        
     useEffect(() => {
         if (isOpen) {
             // 모달이 열리면 body 스크롤 및 상호작용 방지

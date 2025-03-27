@@ -17,6 +17,7 @@ function App() {
 
   const clickTest = () => {
     console.log('clickTest, ', Math.random());
+    alert('clickTest =>' + Math.random());
   }
 
   return (
@@ -32,9 +33,9 @@ function App() {
         {/* 5초 동안 닫을 수 없는 모달 */}
         <Modal
           isOpen={isModalOpen}
-          duration={5 * 1000} // 5초
+          duration={10 * 1000} // 10초
           onClose={closeModal}
-          message="이 모달은 5초 동안 닫을 수 없습니다."
+          message="이 모달은 10초 동안 닫을 수 없습니다."
         />
 
         {/* 모달 외부 UI */}
