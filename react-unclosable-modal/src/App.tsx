@@ -20,6 +20,25 @@ function App() {
     alert('clickTest =>' + Math.random());
   }
 
+  useEffect(() => {
+    const fetchModalStatus = async () => {
+        try {
+          const response = await fetch('http://localhost:3000/modalStatus.json'); // 서버 경로에 맞게 수정
+          console.log('response', response);
+          const data = await response.json();
+          console.log('data', data);
+          const showModal = data.showModal;
+          console.log('showModal', showModal);
+          setIsModalOpen(showModal);
+        } catch (error) {
+          console.error('모달 상태 가져오기 실패:', error);
+          console.error('error', error);
+        }
+      };
+  
+      fetchModalStatus();
+}, []);
+
   return (
     <div className="App">
       <header className="App-header">

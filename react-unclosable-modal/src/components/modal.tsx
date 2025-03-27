@@ -27,7 +27,7 @@ const Modal = ({ isOpen, duration, onClose, message }
                 document.body.style.pointerEvents = 'auto';
             };
         }
-        }, [isOpen, duration, onClose]);
+    }, [isOpen, duration, onClose]);
     
         if (!isOpen) return null;
     
